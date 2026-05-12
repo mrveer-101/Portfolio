@@ -18,6 +18,9 @@
     
     <!-- HTMX (AJAX Interactivity) -->
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+    <!-- Lucide Icons (Professional Icon Set) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
         // Tailwind Configuration for Premium Aesthetic
@@ -81,5 +84,9 @@
     {% include "partials/footer.html" %}
 
     {% block extra_scripts %}{% endblock %}
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
