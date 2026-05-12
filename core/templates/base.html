@@ -40,24 +40,32 @@
         }
     </script>
 
-    <style>
-        /* Glassmorphism Utilities */
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+    <script>
+        // Theme Management (Prevent Flash of Unstyled Content)
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
-        
-        body {
-            background-color: #0A0A0A;
-            color: #E5E5E5;
-        }
-    </style>
+    </script>
 
     {% block extra_head %}{% endblock %}
 </head>
-<body class="antialiased font-sans selection:bg-accent-violet selection:text-white" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+<body class="antialiased font-sans selection:bg-accent-purple selection:text-white bg-white dark:bg-obsidian text-slate-900 dark:text-slate-200 transition-colors duration-300" 
+      hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+      x-data="{ 
+        darkMode: localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+        toggleTheme() {
+            this.darkMode = !this.darkMode;
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+      }">
     
     {% include "partials/_navbar.html" %}
 
