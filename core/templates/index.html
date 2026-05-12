@@ -37,7 +37,7 @@
         <div class="w-full md:w-1/2 mt-12 md:mt-0 relative flex justify-center items-center" x-data="{ visible: false }" x-init="setTimeout(() => visible = true, 300)">
             <div x-show="visible" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="relative">
                 
-                <!-- Tilted Oval Orbits (Enlarged & Darkened) -->
+                <!-- Tilted Oval Orbits (Clean Icon Style) -->
                 <div class="absolute inset-0 flex items-center justify-center -z-20 -rotate-[45deg]">
                     
                     <!-- Primary Orbit (Fixed Path) -->
@@ -45,15 +45,15 @@
                     
                     <!-- Planet 1 (Python) -->
                     <div class="absolute w-[800px] h-[800px] scale-y-[0.4] animate-spin-slow">
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 p-2 px-4 bg-white dark:bg-gray-800 rounded-full shadow-xl rotate-[45deg] scale-y-[2.5] flex items-center space-x-2 border border-slate-100 dark:border-white/10">
-                            <span>🐍</span> <span class="text-[10px] font-bold text-slate-600 dark:text-gray-300">Python</span>
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 p-3 bg-white dark:bg-gray-800 rounded-2xl shadow-xl rotate-[45deg] scale-y-[2.5] flex items-center justify-center border border-slate-100 dark:border-white/10">
+                            <span class="text-xl">🐍</span>
                         </div>
                     </div>
 
                     <!-- Planet 2 (Django) -->
                     <div class="absolute w-[800px] h-[800px] scale-y-[0.4] animate-spin-slow [animation-delay:-10s]">
-                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 p-2 px-4 bg-white dark:bg-gray-800 rounded-full shadow-xl rotate-[45deg] scale-y-[2.5] flex items-center space-x-2 border border-slate-100 dark:border-white/10">
-                            <span>🎸</span> <span class="text-[10px] font-bold text-slate-600 dark:text-gray-300">Django</span>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 p-3 bg-white dark:bg-gray-800 rounded-2xl shadow-xl rotate-[45deg] scale-y-[2.5] flex items-center justify-center border border-slate-100 dark:border-white/10">
+                            <span class="text-xl">🎸</span>
                         </div>
                     </div>
 
@@ -62,15 +62,15 @@
                     
                     <!-- Planet 3 (React) -->
                     <div class="absolute w-[600px] h-[600px] scale-y-[0.5] rotate-[90deg] animate-spin-reverse-slow">
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 p-2 px-4 bg-white dark:bg-gray-800 rounded-full shadow-xl -rotate-[45deg] scale-y-[2.0] flex items-center space-x-2 border border-slate-100 dark:border-white/10">
-                            <span>⚛️</span> <span class="text-[10px] font-bold text-slate-600 dark:text-gray-300">React</span>
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 p-3 bg-white dark:bg-gray-800 rounded-2xl shadow-xl -rotate-[45deg] scale-y-[2.0] flex items-center justify-center border border-slate-100 dark:border-white/10">
+                            <span class="text-xl">⚛️</span>
                         </div>
                     </div>
 
                     <!-- Planet 4 (Tailwind) -->
                     <div class="absolute w-[600px] h-[600px] scale-y-[0.5] rotate-[90deg] animate-spin-reverse-slow [animation-delay:-7s]">
-                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 p-2 px-4 bg-white dark:bg-gray-800 rounded-full shadow-xl -rotate-[45deg] scale-y-[2.0] flex items-center space-x-2 border border-slate-100 dark:border-white/10">
-                            <span>🌊</span> <span class="text-[10px] font-bold text-slate-600 dark:text-gray-300">Tailwind</span>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 p-3 bg-white dark:bg-gray-800 rounded-2xl shadow-xl -rotate-[45deg] scale-y-[2.0] flex items-center justify-center border border-slate-100 dark:border-white/10">
+                            <span class="text-xl">🌊</span>
                         </div>
                     </div>
                 </div>
@@ -78,8 +78,8 @@
                 <!-- Main Blob Shape behind character -->
                 <div class="absolute inset-0 bg-accent-orange/80 rounded-[40px_100px_40px_120px] rotate-6 scale-110 -z-10"></div>
                 
-                <!-- Main Character (Smaller) -->
-                <div class="relative z-10 w-full max-w-xs">
+                <!-- Main Character (Increased Size) -->
+                <div class="relative z-10 w-full max-w-sm">
                     <img src="https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg" 
                          alt="Prasojo Oppa" class="w-full h-auto object-cover rounded-3xl">
                     
