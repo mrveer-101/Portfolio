@@ -6,28 +6,50 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Hero Section -->
-    <section class="min-h-[80vh] flex flex-col justify-center items-center text-center space-y-8" 
-             x-data="{ visible: false }" x-init="setTimeout(() => visible = true, 100)">
+    <section class="min-h-[90vh] flex flex-col md:flex-row items-center justify-between py-20 relative overflow-hidden">
         
-        <div x-show="visible" x-transition:enter="transition ease-out duration-1000"
-             x-transition:enter-start="opacity-0 translate-y-10"
-             x-transition:enter-end="opacity-100 translate-y-0">
-            
-            <h1 class="font-display text-5xl md:text-7xl font-extrabold tracking-tight">
-                Designing <span class="bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent">Digital Excellence</span>
-            </h1>
-            
-            <p class="mt-6 text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
-                A showcase of projects, achievements, and technical expertise built with the modern Python stack.
-            </p>
+        <!-- Background Abstract Shapes (Matching the image) -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-orange-500 to-accent-purple rounded-full blur-[100px] opacity-20 -z-10"></div>
+        <div class="absolute right-[10%] top-[20%] w-64 h-64 bg-gradient-to-br from-orange-400 to-accent-purple rounded-full opacity-60 -z-10 hidden md:block"></div>
+        <div class="absolute right-[5%] bottom-[30%] w-32 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-50 -z-10 hidden md:block"></div>
+        <div class="absolute right-[25%] top-[40%] w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full opacity-60 -z-10 hidden md:block"></div>
 
-            <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <a href="#projects" class="px-8 py-3 bg-accent-blue hover:bg-blue-600 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg shadow-blue-500/20">
-                    View My Work
-                </a>
-                <a href="#about" class="px-8 py-3 glass hover:bg-white/5 text-white font-semibold rounded-full transition-all">
-                    About Me
-                </a>
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 space-y-6 z-10" x-data="{ visible: false }" x-init="setTimeout(() => visible = true, 100)">
+            <div x-show="visible" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 -translate-x-10" x-transition:enter-end="opacity-100 translate-x-0">
+                <h3 class="text-accent-orange font-medium text-xl md:text-2xl">Hi there, I am</h3>
+                <h1 class="font-display text-5xl md:text-7xl font-bold text-white mt-2 leading-tight">
+                    Prasojo Oppa
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-white/90 font-light mt-1">
+                    Freelancer Graphic Designer
+                </h2>
+                <p class="text-gray-400 max-w-lg mt-6 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nullam vulputate purus a magna.
+                </p>
+
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="#contact" class="px-8 py-3 bg-accent-purple hover:bg-accent-purple-light text-white font-semibold rounded-full transition-all shadow-lg shadow-accent-purple/30">
+                        Contact Me
+                    </a>
+                    <a href="#cv" class="px-8 py-3 border-2 border-accent-purple text-white font-semibold rounded-full hover:bg-accent-purple/10 transition-all">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Image/Illustration -->
+        <div class="w-full md:w-1/2 mt-12 md:mt-0 relative flex justify-center items-end" x-data="{ visible: false }" x-init="setTimeout(() => visible = true, 300)">
+            <div x-show="visible" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 translate-y-20 scale-95" x-transition:enter-end="opacity-100 translate-y-0 scale-100">
+                <!-- Main Character Placeholder (The user can replace this with their own cut-out image) -->
+                <div class="relative z-10 w-full max-w-md">
+                    <img src="https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg?t=st=1715516000~exp=1715519600~hmac=6b9b5f9..." 
+                         alt="Prasojo Oppa" class="w-full h-auto object-cover rounded-3xl mix-blend-lighten grayscale-[20%]">
+                    
+                    <!-- Decorative Floating Elements -->
+                    <div class="absolute -top-10 -right-10 w-24 h-24 bg-accent-purple/20 rounded-full blur-xl animate-pulse"></div>
+                </div>
             </div>
         </div>
     </section>

@@ -1,18 +1,37 @@
 <!-- Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 glass" x-data="{ open: false }">
+<nav class="fixed top-0 w-full z-50 bg-[#080C14]/80 backdrop-blur-md" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
-            <div class="flex items-center">
-                <a href="{% url 'core:index' %}" class="font-display text-2xl font-bold bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent">
-                    NIRVAN
+        <div class="flex justify-between h-20 items-center">
+            
+            <!-- Logo Section -->
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-accent-purple rounded-full flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 bg-white rounded-full mx-0.5"></div>
+                    <div class="w-1.5 h-1.5 bg-white rounded-full mx-0.5"></div>
+                </div>
+                <a href="{% url 'core:index' %}" class="font-display text-2xl font-bold tracking-tight text-white">
+                    OPPA
                 </a>
             </div>
             
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#projects" class="hover:text-accent-blue transition-colors">Projects</a>
-                <a href="#experience" class="hover:text-accent-blue transition-colors">Experience</a>
-                <a href="#about" class="hover:text-accent-blue transition-colors">About</a>
+            <!-- Desktop Menu (Centered) -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About Me</a>
+                <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="#service" class="hover:text-white transition-colors">Service</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact Me</a>
+                <div class="flex items-center space-x-1 cursor-pointer hover:text-white transition-colors">
+                    <span>Pages</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="hidden md:block">
+                <a href="#about" class="px-6 py-2 bg-accent-purple hover:bg-accent-purple-light text-white rounded-full font-medium transition-all shadow-lg shadow-accent-purple/20">
+                    About Me
+                </a>
             </div>
 
             <!-- Mobile menu button -->
@@ -28,11 +47,13 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div x-show="open" x-transition class="md:hidden glass border-t border-gray-800">
+    <div x-show="open" x-transition class="md:hidden bg-[#080C14] border-t border-gray-800">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-gray-800">Projects</a>
-            <a href="#experience" class="block px-3 py-2 rounded-md hover:bg-gray-800">Experience</a>
-            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-800">About</a>
+            <a href="#home" class="block px-3 py-2 rounded-md hover:bg-gray-800">Home</a>
+            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-800">About Me</a>
+            <a href="#portfolio" class="block px-3 py-2 rounded-md hover:bg-gray-800">Portfolio</a>
+            <a href="#service" class="block px-3 py-2 rounded-md hover:bg-gray-800">Service</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-gray-800">Contact Me</a>
         </div>
     </div>
 </nav>
