@@ -33,10 +33,26 @@
             </div>
         </div>
 
-        <!-- Right Image/Illustration Area -->
+        <!-- Right Image/Illustration Area (with Orbit Effect) -->
         <div class="w-full md:w-1/2 mt-12 md:mt-0 relative flex justify-center items-center" x-data="{ visible: false }" x-init="setTimeout(() => visible = true, 300)">
             <div x-show="visible" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="relative">
                 
+                <!-- Concentric Orbits (Planet effect) -->
+                <div class="absolute inset-0 flex items-center justify-center -z-20">
+                    <!-- Outer Orbit -->
+                    <div class="absolute w-[450px] h-[450px] border border-slate-200 dark:border-white/5 rounded-full animate-spin-slow">
+                        <div class="absolute top-10 left-10 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg">🐍</div>
+                    </div>
+                    <!-- Middle Orbit -->
+                    <div class="absolute w-[350px] h-[350px] border border-slate-200 dark:border-white/5 rounded-full animate-spin-reverse-slow">
+                        <div class="absolute bottom-5 right-5 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg">⚛️</div>
+                    </div>
+                    <!-- Inner Orbit -->
+                    <div class="absolute w-[250px] h-[250px] border border-slate-200 dark:border-white/5 rounded-full animate-spin-slow">
+                        <div class="absolute top-0 right-1/2 translate-x-1/2 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg">🎨</div>
+                    </div>
+                </div>
+
                 <!-- Main Blob Shape behind character -->
                 <div class="absolute inset-0 bg-accent-orange/80 rounded-[40px_100px_40px_120px] rotate-6 scale-110 -z-10"></div>
                 
@@ -45,9 +61,9 @@
                     <img src="https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg" 
                          alt="Prasojo Oppa" class="w-full h-auto object-cover rounded-3xl">
                     
-                    <!-- Floating Component Cards (Matching image) -->
+                    <!-- Floating Component Cards -->
                     <div class="absolute -top-10 -right-10 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-2xl flex items-center space-x-4 animate-bounce-slow">
-                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">🎨</div>
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">🚀</div>
                         <div>
                             <p class="text-xs font-bold text-slate-900 dark:text-white">Ui/Ux</p>
                             <p class="text-[10px] text-slate-400">Industry standard</p>
@@ -64,6 +80,30 @@
             </div>
         </div>
     </section>
+
+    <style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes spin-reverse-slow {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+        .animate-spin-reverse-slow {
+            animation: spin-reverse-slow 15s linear infinite;
+        }
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 
     <!-- Placeholder for Future Content -->
     <section id="projects" class="py-20">
