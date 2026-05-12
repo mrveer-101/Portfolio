@@ -17,10 +17,9 @@
 ## 🏗️ Project Architecture
 ```text
 NIRVAN/
-├── core/               # Main application logic
-├── nirvan/             # Project configuration & settings
+├── config/             # Project configuration & settings
+├── core/               # Main application (Logic & Templates)
 ├── static/             # Global static assets (CSS, JS, Images)
-├── templates/          # Global base templates
 ├── venv/               # Virtual environment
 └── manage.py           # Django entry point
 ```

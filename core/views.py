@@ -4,4 +4,4 @@ def index(request):
     """
     Renders the main landing page of the portfolio.
     """
-    return render(request, 'core/index.html')
+    return render(request, 'index.html')
