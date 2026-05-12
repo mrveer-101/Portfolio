@@ -37,19 +37,28 @@
         <div class="w-full md:w-1/2 mt-12 md:mt-0 relative flex justify-center items-center" x-data="{ visible: false }" x-init="setTimeout(() => visible = true, 300)">
             <div x-show="visible" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="relative">
                 
-                <!-- Tilted Oval Orbits (Atomic Effect) -->
+                <!-- Tilted Oval Orbits (Correct Planetary Motion) -->
                 <div class="absolute inset-0 flex items-center justify-center -z-20 rotate-[45deg]">
-                    <!-- Outer Oval Orbit -->
-                    <div class="absolute w-[550px] h-[300px] border border-slate-200 dark:border-white/5 rounded-[50%] animate-spin-slow">
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg -rotate-[45deg]">🐍</div>
+                    
+                    <!-- Outer Orbit (Fixed Path) -->
+                    <div class="absolute w-[550px] h-[550px] border border-slate-200 dark:border-white/5 rounded-full scale-y-[0.5]"></div>
+                    <!-- Outer Planet -->
+                    <div class="absolute w-[550px] h-[550px] scale-y-[0.5] animate-spin-slow">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg -rotate-[45deg] scale-y-[2.0]">🐍</div>
                     </div>
-                    <!-- Middle Oval Orbit -->
-                    <div class="absolute w-[450px] h-[250px] border border-slate-200 dark:border-white/5 rounded-[50%] animate-spin-reverse-slow">
-                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg -rotate-[45deg]">⚛️</div>
+
+                    <!-- Middle Orbit (Fixed Path) -->
+                    <div class="absolute w-[400px] h-[400px] border border-slate-200 dark:border-white/5 rounded-full scale-y-[0.5]"></div>
+                    <!-- Middle Planet -->
+                    <div class="absolute w-[400px] h-[400px] scale-y-[0.5] animate-spin-reverse-slow">
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg -rotate-[45deg] scale-y-[2.0]">⚛️</div>
                     </div>
-                    <!-- Inner Oval Orbit -->
-                    <div class="absolute w-[350px] h-[200px] border border-slate-200 dark:border-white/5 rounded-[50%] animate-spin-slow">
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg -rotate-[45deg]">🎨</div>
+
+                    <!-- Inner Orbit (Fixed Path) -->
+                    <div class="absolute w-[250px] h-[250px] border border-slate-200 dark:border-white/5 rounded-full scale-y-[0.5]"></div>
+                    <!-- Inner Planet -->
+                    <div class="absolute w-[250px] h-[250px] scale-y-[0.5] animate-spin-slow">
+                        <div class="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg -rotate-[45deg] scale-y-[2.0]">🎨</div>
                     </div>
                 </div>
 
