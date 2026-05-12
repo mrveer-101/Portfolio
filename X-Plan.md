@@ -7,15 +7,21 @@ Build a premium, high-performance personal portfolio using the **D-A-H-T** stack
 - **Styling**: Tailwind CSS (Modern utility-first CSS)
 - **Interactivity**: HTMX (AJAX without heavy JS)
 - **Client Logic**: Alpine.js (Lightweight micro-animations and state)
+- **Icons**: **Lucide Icons** (Professional/Minimalist SVG set)
 - **Database**: SQLite (Dev) / **Neon.tech Postgres** (Prod - Always Free)
 - **Hosting**: **Google Cloud Run** (Prod - Always Free / Scale to Zero)
 - **Containerization**: **Docker** (For consistent deployment)
-- **Optimization**: WhiteNoise, Django-Compressor, Image optimization (Pillow)
 
-## 🎨 Design Vision (Premium Aesthetic)
-- **Theme**: Sleek Dark Mode (Neutral 900/950) with vibrant accents (Purple/Orange).
-- **Style**: Glassmorphism, subtle gradients, and premium typography (Inter/Outfit).
-- **Inspiration**: OPPA / Modern Graphic Designer Portfolio.
+## 🎨 Design Vision (ORION Executive Aesthetic)
+- **Branding**: ORION (Professional, High-Trust, Modern)
+- **Theme**: Light-Mode Default (Glassmorphic) / Dark Mode Support.
+- **Color Palette**: 
+    - **Primary**: Professional Dark Blue (#1E40AF)
+    - **Secondary**: Accent Orange (#FFA500)
+- **Typography**: 
+    - **Headings**: **Outfit** (Geometric, Bold)
+    - **Body**: **Plus Jakarta Sans** (Premium, High-Legibility)
+- **Style**: Dynamic background "shine spots", orbiting planetary icon systems.
 
 ## 🏗️ Core Modules
 1. **Core**: General settings, Landing page, Navigation.
