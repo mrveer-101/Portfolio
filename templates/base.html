@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NIRVAN | Portfolio{% endblock %}</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN for rapid development) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js (Logic & Micro-animations) -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- HTMX (AJAX Interactivity) -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    
+    <script>
+        // Tailwind Configuration for Premium Aesthetic
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'obsidian': '#0A0A0A',
+                        'accent-blue': '#3B82F6',
+                        'accent-violet': '#8B5CF6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+        }
+    </style>
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="antialiased font-sans selection:bg-accent-violet selection:text-white" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 glass" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="{% url 'core:index' %}" class="font-display text-2xl font-bold bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent">
+                        NIRVAN
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#projects" class="hover:text-accent-blue transition-colors">Projects</a>
+                    <a href="#experience" class="hover:text-accent-blue transition-colors">Experience</a>
+                    <a href="#about" class="hover:text-accent-blue transition-colors">About</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="open = !open" class="text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="open" x-transition class="md:hidden glass border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-gray-800">Projects</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md hover:bg-gray-800">Experience</a>
+                <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-800">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="pt-20">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20 py-10 text-center text-gray-500">
+        <p>&copy; {% now "Y" %} NIRVAN Portfolio. Built with Django + HTMX + Alpine.</p>
+    </footer>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

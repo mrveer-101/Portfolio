@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}NIRVAN | Home{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero Section -->
+    <section class="min-h-[80vh] flex flex-col justify-center items-center text-center space-y-8" 
+             x-data="{ visible: false }" x-init="setTimeout(() => visible = true, 100)">
+        
+        <div x-show="visible" x-transition:enter="transition ease-out duration-1000"
+             x-transition:enter-start="opacity-0 translate-y-10"
+             x-transition:enter-end="opacity-100 translate-y-0">
+            
+            <h1 class="font-display text-5xl md:text-7xl font-extrabold tracking-tight">
+                Designing <span class="bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent">Digital Excellence</span>
+            </h1>
+            
+            <p class="mt-6 text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+                A showcase of projects, achievements, and technical expertise built with the modern Python stack.
+            </p>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-8 py-3 bg-accent-blue hover:bg-blue-600 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg shadow-blue-500/20">
+                    View My Work
+                </a>
+                <a href="#about" class="px-8 py-3 glass hover:bg-white/5 text-white font-semibold rounded-full transition-all">
+                    About Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder for Future Content -->
+    <section id="projects" class="py-20">
+        <h2 class="text-3xl font-display font-bold mb-10 border-l-4 border-accent-blue pl-4">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project cards will be injected here via Django Cotton components in the next phase -->
+            <div class="glass p-6 rounded-2xl h-64 flex items-center justify-center text-gray-600 border-dashed border-2 border-gray-800">
+                Project Cards Coming Soon...
+            </div>
+            <div class="glass p-6 rounded-2xl h-64 flex items-center justify-center text-gray-600 border-dashed border-2 border-gray-800">
+                Stay Tuned!
+            </div>
+            <div class="glass p-6 rounded-2xl h-64 flex items-center justify-center text-gray-600 border-dashed border-2 border-gray-800">
+                Building Excellence...
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock %}
