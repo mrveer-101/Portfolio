@@ -41,20 +41,23 @@
     </script>
 
     <script>
-        // Theme Management (Prevent Flash of Unstyled Content)
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        // Theme Management (Default to Light)
+        if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
+            if (!localStorage.getItem('theme')) {
+                localStorage.setItem('theme', 'light');
+            }
         }
     </script>
 
     {% block extra_head %}{% endblock %}
 </head>
-<body class="antialiased font-sans selection:bg-accent-purple selection:text-white bg-white dark:bg-obsidian text-slate-900 dark:text-slate-200 transition-colors duration-300" 
+<body class="antialiased font-sans selection:bg-accent-purple selection:text-white bg-[#F8FAFC] dark:bg-obsidian text-slate-900 dark:text-slate-200 transition-colors duration-300" 
       hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
       x-data="{ 
-        darkMode: localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+        darkMode: localStorage.getItem('theme') === 'dark',
         toggleTheme() {
             this.darkMode = !this.darkMode;
             if (this.darkMode) {
