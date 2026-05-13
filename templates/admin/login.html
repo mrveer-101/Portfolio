@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIRVAN | Executive Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'obsidian': '#0F172A',
+                        'accent-blue': '#1E40AF',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-obsidian text-white h-screen flex items-center justify-center font-sans antialiased relative overflow-hidden">
+    
+    <!-- Background Elements -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-accent-blue/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-indigo-900/30 rounded-full blur-[150px]"></div>
+        <div class="absolute inset-0" style="background-image:radial-gradient(circle at 2px 2px,rgba(255,255,255,0.05) 1px,transparent 0);background-size:32px 32px;"></div>
+    </div>
+
+    <!-- Login Box -->
+    <div class="relative z-10 w-full max-w-md p-8 sm:p-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl">
+        <div class="text-center mb-10">
+            <div class="w-16 h-16 mx-auto bg-gradient-to-br from-accent-blue to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-accent-blue/30 rotate-3">
+                <svg class="w-8 h-8 text-white -rotate-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            </div>
+            <h1 class="text-3xl font-display font-black tracking-tight">Executive Access</h1>
+            <p class="text-slate-400 mt-2 text-sm">NIRVAN Engine Administration</p>
+        </div>
+
+        {% if error %}
+        <div class="bg-rose-500/10 border border-rose-500/50 text-rose-400 p-3 rounded-lg text-sm mb-6 text-center">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" class="space-y-5">
+            {% csrf_token %}
+            <div>
+                <label class="block text-sm font-semibold text-slate-300 mb-2">Identifier</label>
+                <input type="text" name="username" required class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-colors">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-slate-300 mb-2">Passkey</label>
+                <input type="password" name="password" required class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-colors">
+            </div>
+            
+            <button type="submit" class="w-full py-3.5 bg-white text-obsidian font-bold rounded-xl hover:bg-slate-200 transition-colors mt-4">
+                Authenticate
+            </button>
+        </form>
+        
+        <div class="mt-8 text-center">
+            <a href="{% url 'core:index' %}" class="text-sm text-slate-500 hover:text-white transition-colors">← Return to public site</a>
+        </div>
+    </div>
+</body>
+</html>

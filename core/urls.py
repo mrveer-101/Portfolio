@@ -12,4 +12,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('blogs/<slug:slug>/', views.blog_detail, name='blog_detail'),
     path('projects/<slug:slug>/', views.project_detail, name='project_detail'),
+    path('portal/login/', views.custom_login, name='custom_login'),
+    path('portal/logout/', views.custom_logout, name='custom_logout'),
+    path('portal/dashboard/', views.dashboard, name='dashboard'),
 ]
