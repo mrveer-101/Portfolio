@@ -21,3 +21,6 @@ def projects(request):
 def blog_detail(request, slug):
     # Currently a static template, slug is ignored for now but allows dynamic URLs later
     return render(request, 'blog_detail.html')
+
+def project_detail(request, slug):
+    return render(request, 'project_detail.html')

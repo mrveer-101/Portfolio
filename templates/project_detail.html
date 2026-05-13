@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block title %}NIRVAN | Project Details{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
+    
+    <!-- BACK BUTTON -->
+    <a href="{% url 'core:projects' %}" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-amber-600 dark:hover:text-amber-400 transition-colors mb-10">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Workshop
+    </a>
+
+    <!-- PROJECT HEADER -->
+    <div class="mb-14">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="inline-block px-3 py-1 bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 text-xs font-bold rounded-full uppercase tracking-wider">⭐ Flagship</span>
+            <span class="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-full uppercase tracking-wider">● Active</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-7xl font-display font-black text-slate-900 dark:text-white leading-tight mb-8">
+            Arion.ai <span class="text-amber-500">Forensics</span>
+        </h1>
+        
+        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+            A private quantitative portfolio engine that combines EBM forensic audits, celestial cycle analysis, and algorithmic backtesting to identify asymmetric investment opportunities.
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+            <a href="https://github.com/ArionGD/NIRVAN" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
+                <i data-lucide="github" class="w-5 h-5"></i> View Source Code
+            </a>
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-200 font-bold rounded-full hover:bg-slate-50 dark:hover:bg-white/10 transition-all shadow-sm">
+                <i data-lucide="external-link" class="w-5 h-5"></i> Live Deployment
+            </a>
+        </div>
+    </div>
+
+    <!-- HERO DISPLAY -->
+    <div class="w-full h-80 md:h-[500px] rounded-[2.5rem] relative overflow-hidden mb-20 shadow-2xl" style="background:linear-gradient(135deg,#1e40af 0%,#d97706 100%)">
+        <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:24px 24px;"></div>
+        <div class="absolute top-0 right-0 w-80 h-80 bg-amber-400/20 rounded-full blur-[100px]"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-9xl animate-float">📊</div>
+        </div>
+    </div>
+
+    <!-- HORIZONTAL ROADMAP TIMELINE -->
+    <div class="mb-20">
+        <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
+            <i data-lucide="git-merge" class="w-7 h-7 text-amber-500"></i> Project Roadmap
+        </h2>
+        
+        <div class="relative w-full overflow-x-auto pb-8 snap-x no-scrollbar">
+            <!-- Connecting Line -->
+            <div class="absolute top-1/2 left-0 w-[800px] md:w-full h-1 bg-slate-200 dark:bg-white/10 -translate-y-1/2 rounded-full hidden sm:block"></div>
+            
+            <div class="flex items-center gap-8 md:gap-16 w-max relative z-10 px-4">
+                
+                <!-- Milestone 1 -->
+                <div class="snap-center w-56 md:w-64 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 bg-emerald-500 rounded-full border-4 border-white dark:border-obsidian shadow-lg flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Phase 1: Foundation</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Data pipelines, PostgreSQL schema, and historical 100-year index fetching.</p>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="snap-center w-56 md:w-64 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 bg-emerald-500 rounded-full border-4 border-white dark:border-obsidian shadow-lg flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Phase 2: EBM Audit</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Implemented evidence-based matrix for scoring stock fundamentals.</p>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="snap-center w-56 md:w-64 flex flex-col items-center text-center group">
+                    <div class="w-14 h-14 bg-amber-500 rounded-full border-4 border-white dark:border-obsidian shadow-lg shadow-amber-500/30 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="loader" class="w-6 h-6 animate-spin-slow"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Phase 3: Celestial Engine</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Integrating VedAstro APIs for mapping market nexuses and cycles.</p>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="snap-center w-56 md:w-64 flex flex-col items-center text-center group opacity-50">
+                    <div class="w-14 h-14 bg-slate-200 dark:bg-slate-700 rounded-full border-4 border-white dark:border-obsidian shadow-lg flex items-center justify-center text-slate-400 dark:text-slate-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="lock" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Phase 4: Automation</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Algorithmic execution and fully automated notification pipeline.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJECT DETAILS CONTENT -->
+    <article class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 mb-16 font-body">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-10 mb-4">Architecture & Tech Stack</h2>
+        <p class="mb-6">
+            The system is fundamentally built to be self-reliant and extremely fast. We avoided the traditional JS-heavy SPA approach and opted for a pure Hypermedia architecture.
+        </p>
+        <ul class="list-disc pl-6 mb-8 space-y-2">
+            <li><strong>Backend:</strong> Django 6.0 — Used for the core ORM, authentication, and secure admin interface.</li>
+            <li><strong>Frontend Interactivity:</strong> HTMX & Alpine.js — Handling dynamic partial reloads and state without writing custom JS endpoints.</li>
+            <li><strong>Database:</strong> PostgreSQL — Housing massive 100-year historical market datasets and EBM models.</li>
+            <li><strong>Styling:</strong> Tailwind CSS — For rapid, scalable, and highly customized UI rendering.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-10 mb-4">The "Why"</h2>
+        <p class="mb-6">
+            Relying on public financial tools means you are digesting the exact same information, at the exact same time, as everyone else. True edge in the market requires proprietary infrastructure. This platform allows us to correlate macroeconomic shifts with unconventional cycle data at a scale previously reserved for institutional quant desks.
+        </p>
+    </article>
+
+    <hr class="border-slate-200 dark:border-white/10 mb-12">
+
+    <!-- ENGAGEMENT SECTION -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
+        
+        <!-- Left: Like and Share -->
+        <div class="flex items-center gap-4">
+            <button class="flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:bg-rose-50 dark:hover:bg-rose-900/20 hover:border-rose-200 dark:hover:border-rose-800 text-slate-600 dark:text-slate-300 hover:text-rose-500 transition-all group">
+                <i data-lucide="heart" class="w-5 h-5 group-hover:fill-rose-500"></i>
+                <span class="font-bold text-sm">312 Likes</span>
+            </button>
+
+            <button class="flex items-center justify-center w-11 h-11 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:bg-slate-50 dark:hover:bg-white/10 text-slate-600 dark:text-slate-300 transition-all">
+                <i data-lucide="share-2" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Right: Subscribe -->
+        <div class="flex items-center gap-4 w-full md:w-auto">
+            <span class="text-sm text-slate-500 dark:text-slate-400 hidden md:inline">Track future updates.</span>
+            <button class="w-full md:w-auto px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-full shadow-lg shadow-amber-500/20 transition-transform hover:scale-105 flex items-center justify-center gap-2">
+                <i data-lucide="bell" class="w-4 h-4"></i> Subscribe to Project
+            </button>
+        </div>
+    </div>
+
+    <!-- COMMENTS SECTION -->
+    <div class="bg-slate-50 dark:bg-white/5 rounded-3xl p-8 md:p-10 border border-slate-100 dark:border-white/10">
+        <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+            <i data-lucide="message-square" class="w-6 h-6 text-amber-500"></i> Project Discussion
+        </h3>
+
+        <!-- Comment Input -->
+        <div class="flex gap-4 mb-10">
+            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex-shrink-0 flex items-center justify-center text-slate-500">
+                <i data-lucide="user" class="w-5 h-5"></i>
+            </div>
+            <div class="flex-1">
+                <textarea rows="3" placeholder="Ask a question or share feedback..." class="w-full bg-white dark:bg-[#0a0f1c] border border-slate-200 dark:border-white/10 rounded-2xl p-4 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all resize-none"></textarea>
+                <div class="flex justify-end mt-3">
+                    <button class="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-bold rounded-full hover:opacity-90 transition-opacity">
+                        Post Comment
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample Comment -->
+        <div class="space-y-8">
+            <div class="flex gap-4">
+                <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 flex items-center justify-center font-bold font-display flex-shrink-0">
+                    S
+                </div>
+                <div>
+                    <div class="flex items-baseline gap-2 mb-1">
+                        <span class="font-bold text-slate-900 dark:text-white">Sarah Jenkins</span>
+                        <span class="text-xs text-slate-400">1 week ago</span>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        I'm really interested in how you are structuring the EBM audits in Django. Are you storing the matrices as raw JSON fields, or do you have relational tables for each specific forensic indicator? Beautiful UI by the way!
+                    </p>
+                    <div class="flex items-center gap-4 mt-3">
+                        <button class="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 font-bold flex items-center gap-1"><i data-lucide="thumbs-up" class="w-3 h-3"></i> 8</button>
+                        <button class="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 font-bold">Reply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if(window.lucide) {
+            lucide.createIcons();
+        }
+    });
+</script>
+<style>
+    /* Hide scrollbar for the horizontal timeline */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+</style>
+{% endblock %}
