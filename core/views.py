@@ -56,6 +56,24 @@ def manage_blogs(request):
     return render(request, 'admin/manage_blogs.html')
 
 @login_required(login_url='core:custom_login')
+def blog_create(request):
+    return render(request, 'admin/blogs/create_blog.html')
+
+@login_required(login_url='core:custom_login')
+def blog_edit(request, slug):
+    return render(request, 'admin/blogs/edit_blog.html', {'slug': slug})
+
+@login_required(login_url='core:custom_login')
+def blog_delete(request, slug):
+    # In a real app, delete the model instance here.
+    # We will just redirect back to manage_blogs.
+    return redirect('core:manage_blogs')
+
+@login_required(login_url='core:custom_login')
+def blog_preview(request, slug):
+    return render(request, 'admin/blogs/preview_blog.html', {'slug': slug})
+
+@login_required(login_url='core:custom_login')
 def manage_projects(request):
     return render(request, 'admin/manage_projects.html')
 

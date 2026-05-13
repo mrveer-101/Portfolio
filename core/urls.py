@@ -16,6 +16,10 @@ urlpatterns = [
     path('portal/logout/', views.custom_logout, name='custom_logout'),
     path('portal/dashboard/', views.dashboard, name='dashboard'),
     path('portal/blogs/', views.manage_blogs, name='manage_blogs'),
+    path('portal/blogs/create/', views.blog_create, name='blog_create'),
+    path('portal/blogs/<slug:slug>/edit/', views.blog_edit, name='blog_edit'),
+    path('portal/blogs/<slug:slug>/delete/', views.blog_delete, name='blog_delete'),
+    path('portal/blogs/<slug:slug>/preview/', views.blog_preview, name='blog_preview'),
     path('portal/projects/', views.manage_projects, name='manage_projects'),
     path('portal/profile/', views.manage_profile, name='manage_profile'),
 ]
