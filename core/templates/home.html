@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}NIRVAN | Home{% endblock %}
 
@@ -6,7 +7,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Hero Section -->
-    <section class="min-h-[90vh] flex flex-col md:flex-row items-center justify-between py-20 relative">
+    <section class="min-h-[90vh] flex flex-col md:flex-row items-center justify-between pt-32 pb-48 relative">
 
         <!-- Background Shine Spots (Blobs) for Light Theme -->
         <div
@@ -52,49 +53,46 @@
                 x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                 class="relative">
 
-                <!-- Tilted Round Orbits (Small & Subtle) -->
-                <div class="absolute inset-0 flex items-center justify-center -z-20 -rotate-[45deg]">
-
-                    <!-- Primary (Outer) Orbit -->
-                    <div
-                        class="absolute w-[650px] h-[650px] border border-slate-200/50 dark:border-white/5 rounded-full">
-                    </div>
-
-                    <!-- Planet 1 (Python) -->
-                    <div class="absolute w-[650px] h-[650px] animate-spin-slow">
-                        <div
-                            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-100 dark:border-white/10">
-                            <span class="text-xl">🐍</span>
+                <!-- Atomic Orbits (Perpendicular Intersecting Planes) -->
+                <div class="absolute inset-0 flex items-center justify-center -z-20">
+                    
+                    <!-- Outer Orbit Group (Tilted Left) -->
+                    <div class="absolute inset-0 flex items-center justify-center -rotate-[45deg]">
+                        <!-- Primary (Outer) Orbit -->
+                        <div class="absolute w-[650px] h-[650px] border border-slate-200/50 dark:border-white/5 rounded-full"></div>
+                        
+                        <!-- Planet 1 (Python) -->
+                        <div class="absolute w-[650px] h-[650px] animate-spin-slow">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow">
+                                <img src="{% static 'icons/py.webp' %}" alt="Python" class="w-full h-full object-contain p-[2px] -rotate-[45deg]">
+                            </div>
+                        </div>
+                        
+                        <!-- Planet 2 (Django/Rust) -->
+                        <div class="absolute w-[650px] h-[650px] animate-spin-slow [animation-delay:-10s]">
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow">
+                                <img src="{% static 'icons/rust.webp' %}" alt="Rust" class="w-full h-full object-contain p-[2px] -rotate-[45deg]">
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Planet 2 (Django) -->
-                    <div class="absolute w-[650px] h-[650px] animate-spin-slow [animation-delay:-10s]">
-                        <div
-                            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-100 dark:border-white/10">
-                            <span class="text-xl">🎸</span>
+                    <!-- Inner Orbit Group (Tilted Right - Perpendicular) -->
+                    <div class="absolute inset-0 flex items-center justify-center rotate-[45deg]">
+                        <!-- Secondary (Inner) Orbit -->
+                        <div class="absolute w-[550px] h-[550px] border border-slate-200/50 dark:border-white/5 rounded-full"></div>
+                        
+                        <!-- Planet 3 (React/Postgres) -->
+                        <div class="absolute w-[550px] h-[550px] animate-spin-reverse-slow">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg -rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-reverse-counter-slow">
+                                <img src="{% static 'icons/postgresql.png' %}" alt="Postgres" class="w-full h-full object-contain scale-[2.8] rotate-[45deg]">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Secondary (Inner) Orbit -->
-                    <div
-                        class="absolute w-[550px] h-[550px] border border-slate-200/50 dark:border-white/5 rounded-full rotate-[90deg]">
-                    </div>
-
-                    <!-- Planet 3 (React) -->
-                    <div class="absolute w-[550px] h-[550px] rotate-[90deg] animate-spin-reverse-slow">
-                        <div
-                            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow-lg -rotate-[45deg] flex items-center justify-center border border-slate-100 dark:border-white/10">
-                            <span class="text-xl">⚛️</span>
-                        </div>
-                    </div>
-
-                    <!-- Planet 4 (Tailwind) -->
-                    <div
-                        class="absolute w-[550px] h-[550px] rotate-[90deg] animate-spin-reverse-slow [animation-delay:-7.5s]">
-                        <div
-                            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-800 rounded-xl shadow-lg -rotate-[45deg] flex items-center justify-center border border-slate-100 dark:border-white/10">
-                            <span class="text-xl">🌊</span>
+                        <!-- Planet 4 (Tailwind/GCP) -->
+                        <div class="absolute w-[550px] h-[550px] animate-spin-reverse-slow [animation-delay:-7.5s]">
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg -rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-reverse-counter-slow">
+                                <img src="{% static 'icons/gcp.png' %}" alt="GCP" class="w-full h-full object-contain p-[2px] rotate-[45deg]">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +118,7 @@
                     </div>
 
                     <div
-                        class="absolute -bottom-10 -left-10 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-2xl flex items-center space-x-4">
+                        class="absolute -bottom-10 -left-10 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-2xl flex items-center space-x-4 animate-bounce-slow [animation-delay:-1.5s]">
                         <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">🏆</div>
                         <div>
                             <p class="text-xs font-bold text-slate-900 dark:text-white">Best Design Award</p>
@@ -130,6 +128,11 @@
             </div>
         </div>
     </section>
+    
+    <!-- Section Divider -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <hr class="h-0.5 border-t-0 bg-slate-100 dark:bg-white/5 opacity-100" />
+    </div>
 
     <style>
         @keyframes spin-slow {
@@ -152,12 +155,40 @@
             }
         }
 
+        @keyframes spin-counter {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes spin-reverse-counter {
+            from {
+                transform: rotate(-360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
         .animate-spin-slow {
             animation: spin-slow 20s linear infinite;
         }
 
+        .animate-spin-counter-slow {
+            animation: spin-counter 20s linear infinite;
+        }
+
         .animate-spin-reverse-slow {
             animation: spin-reverse-slow 15s linear infinite;
+        }
+
+        .animate-spin-reverse-counter-slow {
+            animation: spin-reverse-counter 15s linear infinite;
         }
 
         .animate-bounce-slow {
@@ -196,6 +227,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <hr class="h-0.5 border-t-0 bg-slate-100 dark:bg-white/5 opacity-100" />
+    </div>
 
 </div>
 {% endblock %}

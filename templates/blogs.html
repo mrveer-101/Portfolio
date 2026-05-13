@@ -1,0 +1,299 @@
+{% extends "base.html" %}
+
+{% block title %}NIRVAN | Blogs — Thinking Out Loud{% endblock %}
+
+{% block content %}
+<style>
+    @keyframes float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .animate-float { animation: float-y 4s ease-in-out infinite; }
+    .reveal { opacity:0; transform:translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); }
+    .tag-pill { display:inline-block; padding: 0.2rem 0.75rem; border-radius:9999px; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; }
+    .featured-card { background: linear-gradient(135deg, #1e40af 0%, #7c3aed 50%, #4f46e5 100%); }
+</style>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
+
+    <!-- ─── HERO ─── -->
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal relative">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] h-80 bg-violet-200/30 dark:bg-violet-900/20 rounded-full blur-[140px] -z-10 pointer-events-none"></div>
+
+        <span class="inline-block px-4 py-1.5 bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-xs font-bold tracking-widest uppercase rounded-full border border-violet-200 dark:border-violet-700 mb-6">
+            Thinking Out Loud
+        </span>
+        <h1 class="text-5xl md:text-7xl font-display font-black text-slate-900 dark:text-white leading-tight mb-6">
+            The
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-violet-500 to-indigo-500"> Codex</span>
+        </h1>
+        <p class="text-xl text-slate-600 dark:text-gray-400 leading-relaxed mb-10">
+            Deep dives into systems architecture, quantitative finance, local AI, and the intersection of code and capital. No fluff — only signal.
+        </p>
+
+        <!-- Search bar -->
+        <div class="relative max-w-lg mx-auto">
+            <i data-lucide="search" class="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+            <input type="text" id="blog-search" placeholder="Search articles..."
+                   oninput="filterPosts(this.value)"
+                   class="w-full pl-14 pr-6 py-4 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 transition-all">
+        </div>
+    </div>
+
+    <!-- ─── CATEGORY FILTERS ─── -->
+    <div class="flex flex-wrap justify-center gap-3 mb-14 reveal">
+        <button onclick="filterCategory('all')" class="filter-btn active-filter px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="all">All Posts</button>
+        <button onclick="filterCategory('systems')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="systems">⚙️ Systems</button>
+        <button onclick="filterCategory('finance')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="finance">📈 Finance</button>
+        <button onclick="filterCategory('ai')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="ai">🧠 AI & ML</button>
+        <button onclick="filterCategory('web')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="web">🌐 Web Dev</button>
+        <button onclick="filterCategory('philosophy')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="philosophy">💡 Philosophy</button>
+    </div>
+
+    <!-- ─── FEATURED POST ─── -->
+    <div class="mb-14 reveal">
+        <div class="featured-card rounded-[2.5rem] p-10 md:p-14 text-white relative overflow-hidden blog-post" data-cat="systems" data-title="why rust is the endgame">
+            <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:28px 28px;"></div>
+            <div class="absolute top-0 right-0 w-80 h-80 bg-violet-400/20 rounded-full blur-[100px]"></div>
+            <div class="relative z-10 flex flex-col md:flex-row justify-between gap-8 items-start">
+                <div class="max-w-2xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="tag-pill bg-white/20 text-white">⭐ Featured</span>
+                        <span class="tag-pill bg-white/10 text-white/80">⚙️ Systems</span>
+                        <span class="text-white/50 text-xs">May 10, 2026 · 12 min read</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-black mb-4 leading-tight">
+                        Why Rust is the Endgame for Systems Programming
+                    </h2>
+                    <p class="text-white/70 text-lg leading-relaxed mb-8">
+                        Memory safety without a garbage collector is not a compromise — it's an architectural revolution. A deep dive into Rust's ownership model and why I believe it will outlast every contemporary language.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-violet-700 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">
+                        Read Article <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="animate-float flex-shrink-0 hidden md:flex w-36 h-36 bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 items-center justify-center text-7xl">
+                    🦀
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── BLOG GRID ─── -->
+    <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+
+        <!-- Post 1 -->
+        <article class="blog-post card-hover reveal bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden group" data-cat="finance" data-title="arion ai quantitative forensics">
+            <div class="h-40 bg-gradient-to-br from-blue-500 to-emerald-400 relative overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-30">📈</div>
+                <span class="absolute top-4 left-4 tag-pill bg-white/20 text-white backdrop-blur-sm">📈 Finance</span>
+            </div>
+            <div class="p-7">
+                <div class="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> May 8, 2026
+                    <span>·</span>
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 9 min read
+                </div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3 group-hover:text-accent-blue transition-colors leading-snug">Arion.ai — Building a Quantitative Forensics Engine for Indian Markets</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">How I combined EBM analysis, celestial cycle data, and algorithmic backtesting to build a private stock screening engine.</p>
+                <a href="#" class="inline-flex items-center gap-1 text-accent-blue text-sm font-bold hover:gap-2 transition-all">
+                    Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="blog-post card-hover reveal bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden group" data-cat="ai" data-title="local ai slm rag chromadb privacy">
+            <div class="h-40 bg-gradient-to-br from-violet-500 to-indigo-600 relative overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-30">🧠</div>
+                <span class="absolute top-4 left-4 tag-pill bg-white/20 text-white backdrop-blur-sm">🧠 AI & ML</span>
+            </div>
+            <div class="p-7">
+                <div class="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> May 5, 2026
+                    <span>·</span>
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 11 min read
+                </div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3 group-hover:text-violet-600 transition-colors leading-snug">Why the Future of AI is Local — SLMs, RAG, and Data Sovereignty</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">The cloud AI model is fundamentally broken from a privacy standpoint. Here's how to build intelligent systems that never leave your machine.</p>
+                <a href="#" class="inline-flex items-center gap-1 text-violet-600 text-sm font-bold hover:gap-2 transition-all">
+                    Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="blog-post card-hover reveal bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden group" data-cat="web" data-title="django htmx alpine hypermedia modern web">
+            <div class="h-40 bg-gradient-to-br from-cyan-500 to-blue-600 relative overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-30">🌐</div>
+                <span class="absolute top-4 left-4 tag-pill bg-white/20 text-white backdrop-blur-sm">🌐 Web Dev</span>
+            </div>
+            <div class="p-7">
+                <div class="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Apr 29, 2026
+                    <span>·</span>
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 7 min read
+                </div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3 group-hover:text-cyan-600 transition-colors leading-snug">Django + HTMX + Alpine.js: The Hypermedia-First Stack for 2026</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">Why I abandoned React and chose the hypermedia approach — and how it made me a dramatically faster developer with cleaner code.</p>
+                <a href="#" class="inline-flex items-center gap-1 text-cyan-600 text-sm font-bold hover:gap-2 transition-all">
+                    Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="blog-post card-hover reveal bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden group" data-cat="philosophy" data-title="value investing margin of safety discipline capital">
+            <div class="h-40 bg-gradient-to-br from-amber-400 to-orange-500 relative overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-30">💡</div>
+                <span class="absolute top-4 left-4 tag-pill bg-white/20 text-white backdrop-blur-sm">💡 Philosophy</span>
+            </div>
+            <div class="p-7">
+                <div class="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Apr 22, 2026
+                    <span>·</span>
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min read
+                </div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3 group-hover:text-amber-600 transition-colors leading-snug">The Margin of Safety Principle — Applied to Code, Not Just Capital</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">Graham's core investing principle maps perfectly onto software architecture. Here's how I build systems with a built-in safety margin.</p>
+                <a href="#" class="inline-flex items-center gap-1 text-amber-600 text-sm font-bold hover:gap-2 transition-all">
+                    Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="blog-post card-hover reveal bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden group" data-cat="systems" data-title="go concurrency goroutines channels performance">
+            <div class="h-40 bg-gradient-to-br from-teal-500 to-cyan-600 relative overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-30">⚙️</div>
+                <span class="absolute top-4 left-4 tag-pill bg-white/20 text-white backdrop-blur-sm">⚙️ Systems</span>
+            </div>
+            <div class="p-7">
+                <div class="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Apr 15, 2026
+                    <span>·</span>
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 10 min read
+                </div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3 group-hover:text-teal-600 transition-colors leading-snug">Go's Concurrency Model is Underrated — Goroutines & Channels Explained</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A hands-on breakdown of Go's goroutines and channel patterns, and how I use them to build concurrent data pipelines for financial analysis.</p>
+                <a href="#" class="inline-flex items-center gap-1 text-teal-600 text-sm font-bold hover:gap-2 transition-all">
+                    Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="blog-post card-hover reveal bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden group" data-cat="finance" data-title="silver etf gcp celestial cycle investment">
+            <div class="h-40 bg-gradient-to-br from-slate-600 to-blue-700 relative overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-30">🪙</div>
+                <span class="absolute top-4 left-4 tag-pill bg-white/20 text-white backdrop-blur-sm">📈 Finance</span>
+            </div>
+            <div class="p-7">
+                <div class="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Apr 10, 2026
+                    <span>·</span>
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 14 min read
+                </div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3 group-hover:text-accent-blue transition-colors leading-snug">Silver as a Strategic Asset — A Celestial & Fundamental Case</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">Combining macro fundamentals with historical cycle analysis to build a conviction-based thesis for Silver ETF allocation in 2026.</p>
+                <a href="#" class="inline-flex items-center gap-1 text-accent-blue text-sm font-bold hover:gap-2 transition-all">
+                    Read more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- ─── EMPTY STATE (hidden by default) ─── -->
+    <div id="empty-state" class="hidden text-center py-20 reveal">
+        <div class="text-6xl mb-4">🔍</div>
+        <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">No articles found</h3>
+        <p class="text-slate-500">Try a different keyword or category.</p>
+    </div>
+
+    <!-- ─── NEWSLETTER CTA ─── -->
+    <div class="p-12 rounded-[40px] text-white text-center relative overflow-hidden reveal" style="background: linear-gradient(135deg, #1e40af 0%, #7c3aed 60%, #4f46e5 100%);">
+        <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:28px 28px;"></div>
+        <div class="absolute top-0 right-0 w-80 h-80 bg-violet-400/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="relative z-10">
+            <span class="inline-block px-4 py-1 bg-white/20 text-white text-xs font-bold tracking-widest uppercase rounded-full border border-white/30 mb-6">New posts every week</span>
+            <h2 class="text-4xl md:text-5xl font-display font-black mb-4">Stay in the Signal.</h2>
+            <p class="text-violet-100 text-lg max-w-xl mx-auto mb-10">No noise. Just one well-reasoned article per week on systems, finance, or AI — straight to your inbox.</p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="your@email.com"
+                       class="flex-1 px-6 py-4 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/30 text-white placeholder-white/50 focus:outline-none focus:border-white transition-all text-sm">
+                <button onclick="subscribeNewsletter(event)" class="px-7 py-4 bg-white text-violet-700 font-bold rounded-2xl hover:scale-105 transition-transform shadow-xl whitespace-nowrap flex items-center gap-2 justify-center">
+                    <i data-lucide="bell" class="w-4 h-4"></i> Subscribe
+                </button>
+            </div>
+            <div id="sub-toast" class="hidden mt-6 text-sm text-white/80">✅ You're subscribed! Welcome to the Codex.</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Scroll reveal
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // Style filter buttons
+        styleFilterBtns();
+    });
+
+    function styleFilterBtns() {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            if (btn.classList.contains('active-filter')) {
+                btn.classList.add('bg-violet-600', 'text-white', 'border-violet-600');
+                btn.classList.remove('bg-transparent', 'text-slate-500', 'border-slate-200');
+            } else {
+                btn.classList.add('bg-transparent', 'text-slate-500', 'dark:text-slate-400', 'border-slate-200', 'dark:border-white/10');
+                btn.classList.remove('bg-violet-600', 'text-white', 'border-violet-600');
+            }
+        });
+    }
+
+    function filterCategory(cat) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active-filter'));
+        document.querySelector(`[data-cat="${cat}"]`).classList.add('active-filter');
+        styleFilterBtns();
+
+        const posts = document.querySelectorAll('#blog-grid .blog-post');
+        posts.forEach(post => {
+            const match = cat === 'all' || post.dataset.cat === cat;
+            post.style.display = match ? '' : 'none';
+        });
+        checkEmpty();
+    }
+
+    function filterPosts(query) {
+        const q = query.toLowerCase().trim();
+        const posts = document.querySelectorAll('#blog-grid .blog-post');
+        posts.forEach(post => {
+            const match = post.dataset.title.includes(q);
+            post.style.display = match ? '' : 'none';
+        });
+        checkEmpty();
+    }
+
+    function checkEmpty() {
+        const visible = [...document.querySelectorAll('#blog-grid .blog-post')].filter(p => p.style.display !== 'none');
+        document.getElementById('empty-state').classList.toggle('hidden', visible.length > 0);
+    }
+
+    function subscribeNewsletter(e) {
+        e.preventDefault();
+        document.getElementById('sub-toast').classList.remove('hidden');
+    }
+</script>
+
+<style>
+    .filter-btn { cursor: pointer; }
+    .filter-btn.active-filter { background: #7c3aed !important; color: white !important; border-color: #7c3aed !important; }
+</style>
+{% endblock %}

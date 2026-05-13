@@ -1,74 +1,293 @@
 {% extends "base.html" %}
 
-{% block title %}ORION | Contact{% endblock %}
+{% block title %}NIRVAN | Contact — Let's Build Together{% endblock %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-        <h1 class="text-4xl md:text-6xl font-display font-black text-slate-900 dark:text-white mb-6">
-            Get in <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-cyan-400">Touch</span>
+<style>
+    @keyframes float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes pulse-ring { 0%{transform:scale(.8);opacity:1} 100%{transform:scale(2);opacity:0} }
+    .animate-float { animation: float-y 4s ease-in-out infinite; }
+    .reveal { opacity:0; transform:translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); }
+    .contact-link { transition: all 0.3s ease; }
+    .contact-link:hover .link-icon { transform: scale(1.15) rotate(-5deg); }
+    .link-icon { transition: transform 0.3s ease; }
+    .input-field {
+        width: 100%;
+        padding: 0.875rem 1.25rem;
+        background: transparent;
+        border: 1.5px solid;
+        border-radius: 1rem;
+        outline: none;
+        font-family: inherit;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .input-field:focus { box-shadow: 0 0 0 4px rgba(30,64,175,0.1); }
+    .dark .input-field { color: #e2e8f0; border-color: rgba(255,255,255,0.1); }
+    .dark .input-field:focus { border-color: #1E40AF; }
+    .dark .input-field::placeholder { color: #64748b; }
+    .light .input-field { color: #0f172a; border-color: #e2e8f0; }
+    .input-field:focus { border-color: #1E40AF; }
+    .status-dot::before { content:''; display:inline-block; width:8px; height:8px; border-radius:50%; background:#10b981; margin-right:8px; animation: pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+</style>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
+
+    <!-- ─── HERO ─── -->
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-200/30 dark:bg-cyan-900/20 rounded-full blur-[150px] -z-10 pointer-events-none"></div>
+        <span class="inline-block px-4 py-1.5 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 text-xs font-bold tracking-widest uppercase rounded-full border border-cyan-200 dark:border-cyan-700 mb-6">Open to Conversations</span>
+        <h1 class="text-5xl md:text-7xl font-display font-black text-slate-900 dark:text-white leading-tight mb-6">
+            Let's Build
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-cyan-400"> Something</span>
         </h1>
-        <p class="text-lg text-slate-600 dark:text-gray-400">
-            Have a project in mind or just want to say hello? I'm always open to discussing new opportunities and creative ideas.
+        <p class="text-xl text-slate-600 dark:text-gray-400 leading-relaxed">
+            Whether you have a system to architect, a market to decode, or just an idea worth discussing — I want to hear it. Serious inquiries only.
         </p>
+
+        <!-- Live status -->
+        <div class="inline-flex items-center gap-3 mt-8 px-6 py-3 bg-white dark:bg-white/5 rounded-full border border-slate-200 dark:border-white/10 shadow-sm text-sm font-medium text-slate-700 dark:text-slate-300">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            Currently available · Response within 24h
+        </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Contact Information -->
-        <div class="space-y-8">
-            <div class="flex items-start space-x-6">
-                <div class="w-14 h-14 bg-blue-50 dark:bg-accent-blue/10 rounded-2xl flex items-center justify-center text-accent-blue shrink-0">
-                    <i data-lucide="mail" class="w-6 h-6"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 dark:text-white text-xl">Email Me</h3>
-                    <p class="text-slate-500 dark:text-gray-400">hello@orion-dev.com</p>
-                </div>
-            </div>
+    <!-- ─── CONTACT LINKS GRID ─── -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16 reveal">
 
-            <div class="flex items-start space-x-6">
-                <div class="w-14 h-14 bg-orange-50 dark:bg-accent-orange/10 rounded-2xl flex items-center justify-center text-accent-orange shrink-0">
-                    <i data-lucide="map-pin" class="w-6 h-6"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 dark:text-white text-xl">Location</h3>
-                    <p class="text-slate-500 dark:text-gray-400">Global (Remote Optimized)</p>
-                </div>
+        <!-- GitHub -->
+        <a href="https://github.com/ArionGD" target="_blank" rel="noopener"
+           class="contact-link group p-7 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm card-hover flex flex-col gap-5 hover:border-slate-400 dark:hover:border-white/30">
+            <div class="link-icon w-14 h-14 bg-slate-100 dark:bg-white/10 rounded-2xl flex items-center justify-center">
+                <svg class="w-7 h-7 text-slate-800 dark:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             </div>
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Source Code</p>
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">GitHub</h3>
+                <p class="text-sm text-slate-500 mt-1">@ArionGD</p>
+            </div>
+            <div class="flex items-center gap-1 text-xs font-bold text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-colors">
+                View Profile <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
 
-            <div class="flex items-start space-x-6">
-                <div class="w-14 h-14 bg-slate-50 dark:bg-white/10 rounded-2xl flex items-center justify-center text-slate-600 dark:text-gray-300 shrink-0">
-                    <i data-lucide="linkedin" class="w-6 h-6"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 dark:text-white text-xl">Social</h3>
-                    <p class="text-slate-500 dark:text-gray-400">linkedin.com/in/orion</p>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/adityarajpandey" target="_blank" rel="noopener"
+           class="contact-link group p-7 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm card-hover flex flex-col gap-5 hover:border-blue-400 dark:hover:border-blue-500">
+            <div class="link-icon w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center">
+                <svg class="w-7 h-7 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Professional</p>
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">LinkedIn</h3>
+                <p class="text-sm text-slate-500 mt-1">Adityaraj Pandey</p>
+            </div>
+            <div class="flex items-center gap-1 text-xs font-bold text-slate-400 group-hover:text-blue-600 transition-colors">
+                Connect <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:adityaraj@example.com"
+           class="contact-link group p-7 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm card-hover flex flex-col gap-5 hover:border-cyan-400 dark:hover:border-cyan-500">
+            <div class="link-icon w-14 h-14 bg-cyan-100 dark:bg-cyan-900/40 rounded-2xl flex items-center justify-center">
+                <i data-lucide="mail" class="w-7 h-7 text-cyan-600"></i>
+            </div>
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Direct Line</p>
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Email</h3>
+                <p class="text-sm text-slate-500 mt-1">adityaraj@example.com</p>
+            </div>
+            <div class="flex items-center gap-1 text-xs font-bold text-slate-400 group-hover:text-cyan-600 transition-colors">
+                Send Mail <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
+
+        <!-- Twitter / X -->
+        <a href="https://x.com/ArionGD" target="_blank" rel="noopener"
+           class="contact-link group p-7 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm card-hover flex flex-col gap-5 hover:border-slate-600 dark:hover:border-slate-400">
+            <div class="link-icon w-14 h-14 bg-slate-100 dark:bg-white/10 rounded-2xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-slate-800 dark:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </div>
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Thoughts</p>
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">X (Twitter)</h3>
+                <p class="text-sm text-slate-500 mt-1">@ArionGD</p>
+            </div>
+            <div class="flex items-center gap-1 text-xs font-bold text-slate-400 group-hover:text-slate-700 dark:group-hover:text-white transition-colors">
+                Follow <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
+    </div>
+
+    <!-- ─── FORM + SIDEBAR ─── -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-20">
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-3 reveal">
+            <div class="p-10 bg-white dark:bg-white/5 rounded-[2rem] border border-slate-100 dark:border-white/10 shadow-sm">
+                <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white mb-2">Send a Message</h2>
+                <p class="text-slate-500 mb-8">Describe your idea or opportunity. I read every message.</p>
+
+                <form class="space-y-5" onsubmit="handleSubmit(event)">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Your Name</label>
+                            <input type="text" placeholder="Satoshi Nakamoto"
+                                   class="input-field border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 bg-slate-50 dark:bg-white/5">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Email</label>
+                            <input type="email" placeholder="satoshi@bitcoin.org"
+                                   class="input-field border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 bg-slate-50 dark:bg-white/5">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Subject</label>
+                        <input type="text" placeholder="A system idea / collaboration / opportunity..."
+                               class="input-field border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 bg-slate-50 dark:bg-white/5">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Category</label>
+                        <select class="input-field border-slate-200 dark:border-white/10 text-slate-900 dark:text-white bg-slate-50 dark:bg-obsidian">
+                            <option value="">— Select one —</option>
+                            <option>Systems / Backend Engineering</option>
+                            <option>Financial Tool / Quantitative Analysis</option>
+                            <option>Local AI / RAG Architecture</option>
+                            <option>Full-Stack Web Project</option>
+                            <option>General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Message</label>
+                        <textarea rows="5" placeholder="Describe your project or idea in detail..."
+                                  class="input-field border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 bg-slate-50 dark:bg-white/5 resize-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="w-full px-8 py-4 bg-gradient-to-r from-accent-blue to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/20 hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Send Message
+                    </button>
+                </form>
+                <!-- Success toast (hidden by default) -->
+                <div id="success-toast" class="hidden mt-6 p-4 bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 rounded-2xl flex items-center gap-3 text-emerald-700 dark:text-emerald-400">
+                    <i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0"></i>
+                    <span class="text-sm font-medium">Message sent! I'll get back to you within 24 hours.</span>
                 </div>
             </div>
         </div>
 
-        <!-- Contact Form (Placeholder UI) -->
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-2xl border border-slate-100 dark:border-white/5">
-            <form action="#" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                        <label class="text-sm font-bold text-slate-700 dark:text-gray-300">Name</label>
-                        <input type="text" class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-accent-blue outline-none transition-all">
+        <!-- Sidebar -->
+        <div class="lg:col-span-2 space-y-6 reveal">
+
+            <!-- What I'm open to -->
+            <div class="p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm">
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-6">What I'm Open To</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="code-2" class="w-4 h-4 text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-slate-900 dark:text-white">Systems Engineering</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Rust, Go, low-level backend, performance tools</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="brain-circuit" class="w-4 h-4 text-emerald-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-slate-900 dark:text-white">Local AI Projects</p>
+                            <p class="text-xs text-slate-500 mt-0.5">SLMs, RAG pipelines, on-device inference</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-9 h-9 rounded-xl bg-cyan-100 dark:bg-cyan-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="trending-up" class="w-4 h-4 text-cyan-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-slate-900 dark:text-white">FinTech Collaboration</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Quant tools, portfolio engines, data analysis</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-9 h-9 rounded-xl bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="globe" class="w-4 h-4 text-orange-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-slate-900 dark:text-white">Full-Stack Web</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Django, HTMX, Alpine.js, premium UI/UX</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Response time card -->
+            <div class="p-8 bg-gradient-to-br from-slate-900 to-slate-800 dark:from-white/5 dark:to-transparent rounded-3xl border border-white/10 text-white relative overflow-hidden animate-float">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 rounded-full blur-[60px]"></div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-5">
+                        <i data-lucide="clock" class="w-6 h-6 text-cyan-400"></i>
                     </div>
-                    <div class="space-y-2">
-                        <label class="text-sm font-bold text-slate-700 dark:text-gray-300">Email</label>
-                        <input type="email" class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-accent-blue outline-none transition-all">
+                    <h4 class="font-display font-bold text-xl mb-2">Response Time</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">I typically respond within <span class="text-cyan-400 font-bold">24 hours</span> on weekdays. For urgent matters, reach out directly via email or LinkedIn.</p>
+                    <div class="mt-5 pt-5 border-t border-white/10 flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                        <span class="text-sm text-slate-400">Adityaraj is currently <span class="text-emerald-400 font-bold">online</span></span>
                     </div>
                 </div>
-                <div class="space-y-2">
-                    <label class="text-sm font-bold text-slate-700 dark:text-gray-300">Message</label>
-                    <textarea rows="4" class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-accent-blue outline-none transition-all"></textarea>
-                </div>
-                <button type="submit" class="w-full py-4 bg-accent-blue text-white font-bold rounded-xl shadow-xl shadow-accent-blue/20 hover:scale-[1.02] transition-all">
-                    Send Message
-                </button>
-            </form>
+            </div>
         </div>
     </div>
+
+    <!-- ─── BOTTOM CTA ─── -->
+    <div class="p-12 bg-gradient-to-br from-accent-blue to-cyan-500 rounded-[40px] text-white text-center relative overflow-hidden reveal">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+        <div class="relative z-10">
+            <h2 class="text-4xl md:text-5xl font-display font-black mb-4">Have a bold idea?</h2>
+            <p class="text-blue-100 text-lg max-w-xl mx-auto mb-8">Most great systems start with a single conversation. Let's have ours.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="mailto:adityaraj@example.com"
+                   class="px-8 py-4 bg-white text-accent-blue font-bold rounded-full hover:scale-105 transition-transform shadow-xl flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i> Email Directly
+                </a>
+                <a href="https://linkedin.com/in/adityarajpandey" target="_blank"
+                   class="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:scale-105 transition-transform border border-white/30 flex items-center gap-2">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    });
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        const toast = document.getElementById('success-toast');
+        toast.classList.remove('hidden');
+        toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        setTimeout(() => toast.classList.add('hidden'), 6000);
+    }
+</script>
 {% endblock %}

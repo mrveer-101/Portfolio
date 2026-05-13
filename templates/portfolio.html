@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+{% block title %}NIRVAN | Portfolio — Career & Craft{% endblock %}
+{% block content %}
+<style>
+    @keyframes float-y{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .animate-float{animation:float-y 4s ease-in-out infinite}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .card-hover{transition:transform .3s ease,box-shadow .3s ease}
+    .card-hover:hover{transform:translateY(-6px)}
+    /* Skill bars */
+    .skill-fill{height:6px;border-radius:9999px;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+    /* Roadmap */
+    .road-line{position:relative}
+    .road-line::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#1e40af,#f43f5e);transform:translateX(-50%);z-index:0}
+    @media(max-width:768px){.road-line::before{left:24px}}
+    .road-node{position:relative;z-index:1}
+    .road-dot{width:20px;height:20px;border-radius:50%;border:4px solid;flex-shrink:0}
+    .road-dot.done{background:#1e40af;border-color:#1e40af;box-shadow:0 0 0 6px rgba(30,64,175,.15)}
+    .road-dot.active{background:#f43f5e;border-color:#f43f5e;box-shadow:0 0 0 8px rgba(244,63,94,.15);animation:pulse-node 2s infinite}
+    .road-dot.future{background:white;border-color:#cbd5e1}
+    @keyframes pulse-node{0%,100%{box-shadow:0 0 0 8px rgba(244,63,94,.15)}50%{box-shadow:0 0 0 16px rgba(244,63,94,.05)}}
+    .skill-bar-wrap:hover .skill-fill{filter:brightness(1.1)}
+</style>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
+
+    <!-- HERO -->
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal relative">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] h-80 bg-rose-200/30 dark:bg-rose-900/15 rounded-full blur-[140px] -z-10 pointer-events-none"></div>
+        <span class="inline-block px-4 py-1.5 bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 text-xs font-bold tracking-widest uppercase rounded-full border border-rose-200 dark:border-rose-700 mb-6">Career & Craft</span>
+        <h1 class="text-5xl md:text-7xl font-display font-black text-slate-900 dark:text-white leading-tight mb-6">
+            My
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-rose-500 to-pink-500"> Portfolio</span>
+        </h1>
+        <p class="text-xl text-slate-600 dark:text-gray-400 leading-relaxed">Skills forged through discipline, education grounded in first principles, and a roadmap drawn with precision. Every milestone earned.</p>
+    </div>
+
+    <!-- SKILL CONSTELLATION -->
+    <div class="mb-24 reveal">
+        <h2 class="text-4xl font-display font-black text-slate-900 dark:text-white mb-2">Skill <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-rose-500">Constellation</span></h2>
+        <p class="text-slate-500 mb-10">Proficiency levels across my active tech stack.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8" id="skills-grid">
+
+            <div class="skill-bar-wrap space-y-2">
+                <div class="flex justify-between text-sm font-bold"><span class="text-slate-800 dark:text-white flex items-center gap-2"><span>🦀</span> Rust</span><span class="text-accent-blue">90%</span></div>
+                <div class="bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-accent-blue to-rose-500" style="--w:90%"></div></div>
+            </div>
+            <div class="skill-bar-wrap space-y-2">
+                <div class="flex justify-between text-sm font-bold"><span class="text-slate-800 dark:text-white flex items-center gap-2"><span>🐍</span> Python</span><span class="text-accent-blue">93%</span></div>
+                <div class="bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-accent-blue to-emerald-400" style="--w:93%"></div></div>
+            </div>
+            <div class="skill-bar-wrap space-y-2">
+                <div class="flex justify-between text-sm font-bold"><span class="text-slate-800 dark:text-white flex items-center gap-2"><span>🐹</span> Go</span><span class="text-accent-blue">78%</span></div>
+                <div class="bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-cyan-500 to-blue-600" style="--w:78%"></div></div>
+            </div>
+            <div class="skill-bar-wrap space-y-2">
+                <div class="flex justify-between text-sm font-bold"><span class="text-slate-800 dark:text-white flex items-center gap-2"><span>🎸</span> Django</span><span class="text-accent-blue">88%</span></div>
+                <div class="bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-green-500 to-teal-500" style="--w:88%"></div></div>
+            </div>
+            <div class="skill-bar-wrap space-y-2">
+                <div class="flex justify-between text-sm font-bold"><span class="text-slate-800 dark:text-white flex items-center gap-2"><span>🧠</span> SLM / RAG (AI)</span><span class="text-accent-blue">82%</span></div>
+                <div class="bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-violet-500 to-indigo-600" style="--w:82%"></div></div>
+            </div>
+            <div class="skill-bar-wrap space-y-2">
+                <div class="flex justify-between text-sm font-bold"><span class="text-slate-800 dark:text-white flex items-center gap-2"><span>📈</span> Quant Finance</span><span class="text-accent-blue">85%</span></div>
+                <div class="bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-amber-400 to-orange-500" style="--w:85%"></div></div>
+            </div>
+            <div class="skill-bar-wrap space-y-2">
+                <div class="flex justify-between text-sm font-bold"><span class="text-slate-800 dark:text-white flex items-center gap-2"><span>🌊</span> Tailwind CSS</span><span class="text-accent-blue">95%</span></div>
+                <div class="bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-sky-400 to-cyan-500" style="--w:95%"></div></div>
+            </div>
+            <div class="skill-bar-wrap space-y-2">
+                <div class="flex justify-between text-sm font-bold"><span class="text-slate-800 dark:text-white flex items-center gap-2"><span>☁️</span> GCP / DevOps</span><span class="text-accent-blue">72%</span></div>
+                <div class="bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-rose-400 to-pink-500" style="--w:72%"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TECH CATEGORIES -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-24 reveal">
+        <div class="p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 card-hover text-center shadow-sm">
+            <div class="text-3xl mb-3">⚙️</div>
+            <h4 class="font-display font-bold text-slate-900 dark:text-white mb-1">Systems</h4>
+            <p class="text-xs text-slate-500">Rust · Go · C</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 card-hover text-center shadow-sm">
+            <div class="text-3xl mb-3">🌐</div>
+            <h4 class="font-display font-bold text-slate-900 dark:text-white mb-1">Web Stack</h4>
+            <p class="text-xs text-slate-500">Django · HTMX · Alpine</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 card-hover text-center shadow-sm">
+            <div class="text-3xl mb-3">🧠</div>
+            <h4 class="font-display font-bold text-slate-900 dark:text-white mb-1">AI/ML</h4>
+            <p class="text-xs text-slate-500">SLMs · RAG · ChromaDB</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 card-hover text-center shadow-sm">
+            <div class="text-3xl mb-3">📊</div>
+            <h4 class="font-display font-bold text-slate-900 dark:text-white mb-1">Finance</h4>
+            <p class="text-xs text-slate-500">Quant · EBM · Backtesting</p>
+        </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="mb-24 reveal">
+        <h2 class="text-4xl font-display font-black text-slate-900 dark:text-white mb-2">Education <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-rose-500">& Formation</span></h2>
+        <p class="text-slate-500 mb-12">The academic foundations and self-directed learning that shaped my thinking.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm card-hover">
+                <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-2xl mb-5">🎓</div>
+                <p class="text-xs font-bold text-accent-blue uppercase tracking-widest mb-1">2023 – 2026</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-1">BCA — Bachelor of Computer Applications</h3>
+                <p class="text-sm text-slate-500 mb-3">Specialising in Systems Programming & Financial Computing</p>
+                <span class="inline-block px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 text-xs font-bold rounded-full border border-blue-200 dark:border-blue-700">Current</span>
+            </div>
+            <div class="p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm card-hover">
+                <div class="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center text-2xl mb-5">📚</div>
+                <p class="text-xs font-bold text-rose-500 uppercase tracking-widest mb-1">Self-Directed</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-1">Quantitative Finance & Value Investing</h3>
+                <p class="text-sm text-slate-500 mb-3">Benjamin Graham · Damodaran · Buffett · Munger</p>
+                <span class="inline-block px-3 py-1 bg-rose-50 dark:bg-rose-900/30 text-rose-600 text-xs font-bold rounded-full border border-rose-200 dark:border-rose-700">Ongoing</span>
+            </div>
+            <div class="p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm card-hover">
+                <div class="w-12 h-12 rounded-2xl bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center text-2xl mb-5">🤖</div>
+                <p class="text-xs font-bold text-violet-500 uppercase tracking-widest mb-1">Independent Research</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-1">Local AI — SLMs & RAG Architectures</h3>
+                <p class="text-sm text-slate-500 mb-3">ChromaDB · Ollama · LangChain · On-device Inference</p>
+                <span class="inline-block px-3 py-1 bg-violet-50 dark:bg-violet-900/30 text-violet-600 text-xs font-bold rounded-full border border-violet-200 dark:border-violet-700">Active</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAREER ROADMAP -->
+    <div class="mb-24 reveal">
+        <h2 class="text-4xl font-display font-black text-slate-900 dark:text-white mb-2">The <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-rose-500">Roadmap</span></h2>
+        <p class="text-slate-500 mb-16">From learning to deploying to scaling — the exact trajectory, milestone by milestone.</p>
+
+        <div class="road-line space-y-0 max-w-4xl mx-auto">
+
+            <!-- Milestone 1 -->
+            <div class="road-node flex flex-col md:flex-row items-center gap-0 md:gap-8 mb-0">
+                <div class="w-full md:w-5/12 md:text-right pb-8 md:pb-16 reveal">
+                    <div class="p-6 bg-white dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10 shadow-sm md:ml-auto inline-block text-left md:text-right w-full">
+                        <p class="text-xs font-bold text-accent-blue uppercase tracking-widest mb-1">2021</p>
+                        <h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">First Line of Code</h3>
+                        <p class="text-sm text-slate-500 mt-1">Python basics, CLI tools, and the beginning of an obsession with making computers do things.</p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 z-10 hidden md:flex"><div class="road-dot done"></div></div>
+                <div class="w-full md:w-5/12 md:pb-16"></div>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="road-node flex flex-col md:flex-row items-center gap-0 md:gap-8 mb-0">
+                <div class="w-full md:w-5/12 md:pb-16"></div>
+                <div class="flex-shrink-0 z-10 hidden md:flex"><div class="road-dot done"></div></div>
+                <div class="w-full md:w-5/12 pb-8 md:pb-16 reveal">
+                    <div class="p-6 bg-white dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10 shadow-sm w-full">
+                        <p class="text-xs font-bold text-accent-blue uppercase tracking-widest mb-1">2022</p>
+                        <h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">Django & Web Architecture</h3>
+                        <p class="text-sm text-slate-500 mt-1">Built first full-stack applications. Discovered the elegance of hypermedia-driven design with HTMX.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div class="road-node flex flex-col md:flex-row items-center gap-0 md:gap-8 mb-0">
+                <div class="w-full md:w-5/12 md:text-right pb-8 md:pb-16 reveal">
+                    <div class="p-6 bg-white dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10 shadow-sm inline-block text-left md:text-right w-full">
+                        <p class="text-xs font-bold text-accent-blue uppercase tracking-widest mb-1">2023</p>
+                        <h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">BCA + Rust Discovery</h3>
+                        <p class="text-sm text-slate-500 mt-1">Enrolled in BCA. Discovered Rust and became captivated by memory-safe systems without GC overhead.</p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 z-10 hidden md:flex"><div class="road-dot done"></div></div>
+                <div class="w-full md:w-5/12 md:pb-16"></div>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="road-node flex flex-col md:flex-row items-center gap-0 md:gap-8 mb-0">
+                <div class="w-full md:w-5/12 md:pb-16"></div>
+                <div class="flex-shrink-0 z-10 hidden md:flex"><div class="road-dot done"></div></div>
+                <div class="w-full md:w-5/12 pb-8 md:pb-16 reveal">
+                    <div class="p-6 bg-white dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10 shadow-sm w-full">
+                        <p class="text-xs font-bold text-accent-blue uppercase tracking-widest mb-1">2024</p>
+                        <h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">Arion.ai — Quant Finance Engine</h3>
+                        <p class="text-sm text-slate-500 mt-1">Began developing a private quantitative engine combining algorithmic forensics with fundamental analysis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 5 — ACTIVE -->
+            <div class="road-node flex flex-col md:flex-row items-center gap-0 md:gap-8 mb-0">
+                <div class="w-full md:w-5/12 md:text-right pb-8 md:pb-16 reveal">
+                    <div class="p-6 bg-gradient-to-br from-accent-blue/10 to-rose-500/10 dark:from-accent-blue/20 dark:to-rose-500/20 rounded-2xl border border-accent-blue/30 shadow-sm inline-block text-left md:text-right w-full">
+                        <p class="text-xs font-bold text-rose-500 uppercase tracking-widest mb-1">2025–2026 ← NOW</p>
+                        <h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">NIRVAN Portfolio + Emerald Sentinel</h3>
+                        <p class="text-sm text-slate-500 mt-1">Building this very portfolio. Simultaneously architecting Emerald Sentinel — a low-overhead Rust system monitor.</p>
+                        <span class="inline-block mt-3 px-3 py-1 bg-rose-100 dark:bg-rose-900/40 text-rose-600 text-xs font-bold rounded-full">🔴 Active</span>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 z-10 hidden md:flex"><div class="road-dot active"></div></div>
+                <div class="w-full md:w-5/12 md:pb-16"></div>
+            </div>
+
+            <!-- Milestone 6 — FUTURE -->
+            <div class="road-node flex flex-col md:flex-row items-center gap-0 md:gap-8 mb-0">
+                <div class="w-full md:w-5/12 md:pb-16"></div>
+                <div class="flex-shrink-0 z-10 hidden md:flex"><div class="road-dot future"></div></div>
+                <div class="w-full md:w-5/12 pb-8 md:pb-16 reveal">
+                    <div class="p-6 bg-white dark:bg-white/5 rounded-2xl border border-dashed border-slate-300 dark:border-white/10 shadow-sm w-full opacity-70">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">2026 Q3</p>
+                        <h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">GCP Cloud Run Deployment</h3>
+                        <p class="text-sm text-slate-500 mt-1">Dockerize and deploy the full NIRVAN stack on Google Cloud Run with CI/CD pipelines.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone 7 — FUTURE -->
+            <div class="road-node flex flex-col md:flex-row items-center gap-0 md:gap-8">
+                <div class="w-full md:w-5/12 md:text-right pb-8 md:pb-4 reveal">
+                    <div class="p-6 bg-white dark:bg-white/5 rounded-2xl border border-dashed border-slate-300 dark:border-white/10 shadow-sm inline-block text-left md:text-right w-full opacity-70">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">2027</p>
+                        <h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">Finance & Information Management</h3>
+                        <p class="text-sm text-slate-500 mt-1">Transition into high-level quantitative strategy and institutional-grade financial systems architecture.</p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 z-10 hidden md:flex"><div class="road-dot future"></div></div>
+                <div class="w-full md:w-5/12"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="p-12 rounded-[40px] text-white text-center relative overflow-hidden reveal" style="background:linear-gradient(135deg,#1e40af 0%,#f43f5e 100%)">
+        <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:28px 28px;"></div>
+        <div class="relative z-10">
+            <h2 class="text-4xl md:text-5xl font-display font-black mb-4">Want to work together?</h2>
+            <p class="text-rose-100 text-lg max-w-xl mx-auto mb-8">I'm always open to high-conviction collaborations that sit at the edge of systems and capital.</p>
+            <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-rose-600 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">
+                <i data-lucide="send" class="w-5 h-5"></i> Start a Conversation
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i*100); });
+    }, {threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Animate skill bars when visible
+    const skillObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if(e.isIntersecting) {
+                e.target.querySelectorAll('.skill-fill').forEach(bar => {
+                    bar.style.width = getComputedStyle(bar).getPropertyValue('--w') || bar.style.getPropertyValue('--w');
+                    const w = bar.getAttribute('style').match(/--w:([\d%]+)/)?.[1];
+                    if(w) bar.style.width = w;
+                });
+                skillObs.unobserve(e.target);
+            }
+        });
+    }, {threshold:0.3});
+    const grid = document.getElementById('skills-grid');
+    if(grid) skillObs.observe(grid);
+});
+</script>
+{% endblock %}

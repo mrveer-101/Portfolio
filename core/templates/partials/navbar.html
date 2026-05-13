@@ -18,9 +18,9 @@
             <div class="hidden md:flex space-x-8 text-sm font-bold text-slate-500 dark:text-gray-400">
                 <a href="{% url 'core:index' %}" class="text-accent-blue transition-colors">Home</a>
                 <a href="{% url 'core:about' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
-                <a href="#portfolio" class="hover:text-slate-900 dark:hover:text-white transition-colors">Portfolio</a>
-                <a href="#blogs" class="hover:text-slate-900 dark:hover:text-white transition-colors">Blogs</a>
-                <a href="#projects" class="hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
+                <a href="{% url 'core:portfolio' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">Portfolio</a>
+                <a href="{% url 'core:blogs' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">Blogs</a>
+                <a href="{% url 'core:projects' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
             </div>
 
             <!-- Right Actions -->
