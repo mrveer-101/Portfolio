@@ -17,3 +17,7 @@ def portfolio(request):
 
 def projects(request):
     return render(request, 'projects.html')
+
+def blog_detail(request, slug):
+    # Currently a static template, slug is ignored for now but allows dynamic URLs later
+    return render(request, 'blog_detail.html')
