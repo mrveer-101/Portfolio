@@ -15,4 +15,7 @@ urlpatterns = [
     path('portal/login/', views.custom_login, name='custom_login'),
     path('portal/logout/', views.custom_logout, name='custom_logout'),
     path('portal/dashboard/', views.dashboard, name='dashboard'),
+    path('portal/blogs/', views.manage_blogs, name='manage_blogs'),
+    path('portal/projects/', views.manage_projects, name='manage_projects'),
+    path('portal/profile/', views.manage_profile, name='manage_profile'),
 ]

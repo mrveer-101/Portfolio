@@ -1,0 +1,67 @@
+{% extends "admin/admin_base.html" %}
+
+{% block title %}NIRVAN | Manage Projects{% endblock %}
+{% block header_title %}Manage Projects{% endblock %}
+
+{% block content %}
+<div class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+        <h2 class="text-2xl font-display font-black tracking-tight mb-1">Portfolio Projects</h2>
+        <p class="text-slate-500 dark:text-slate-400 text-sm">Add and update the projects displayed in your workshop.</p>
+    </div>
+    <button class="px-5 py-2.5 bg-accent-blue text-white font-bold rounded-xl shadow-lg shadow-accent-blue/20 hover:scale-105 transition-transform flex items-center gap-2">
+        <i data-lucide="plus" class="w-4 h-4"></i> New Project
+    </button>
+</div>
+
+<div class="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-2xl overflow-hidden shadow-sm">
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-slate-50 dark:bg-white/5 border-b border-slate-200 dark:border-white/10 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold">
+                    <th class="p-4">Project Name</th>
+                    <th class="p-4">Category</th>
+                    <th class="p-4">Status</th>
+                    <th class="p-4 text-right">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-white/5">
+                <!-- Row 1 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="p-4">
+                        <p class="font-bold text-slate-900 dark:text-white mb-1">Arion.ai Forensics</p>
+                        <p class="text-xs text-slate-500">slug: arion-ai</p>
+                    </td>
+                    <td class="p-4 text-sm font-semibold">📈 Finance</td>
+                    <td class="p-4">
+                        <span class="px-2.5 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-md">● Active</span>
+                    </td>
+                    <td class="p-4 text-right">
+                        <div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button class="p-2 text-slate-400 hover:text-accent-blue bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm"><i data-lucide="edit" class="w-4 h-4"></i></button>
+                            <button class="p-2 text-slate-400 hover:text-rose-500 bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
+                    <td class="p-4">
+                        <p class="font-bold text-slate-900 dark:text-white mb-1">Emerald Sentinel</p>
+                        <p class="text-xs text-slate-500">slug: emerald-sentinel</p>
+                    </td>
+                    <td class="p-4 text-sm font-semibold">⚙️ Systems</td>
+                    <td class="p-4">
+                        <span class="px-2.5 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-bold rounded-md">In Progress</span>
+                    </td>
+                    <td class="p-4 text-right">
+                        <div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button class="p-2 text-slate-400 hover:text-accent-blue bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm"><i data-lucide="edit" class="w-4 h-4"></i></button>
+                            <button class="p-2 text-slate-400 hover:text-rose-500 bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

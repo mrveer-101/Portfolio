@@ -50,3 +50,15 @@ def custom_logout(request):
 @login_required(login_url='core:custom_login')
 def dashboard(request):
     return render(request, 'admin/dashboard.html')
+
+@login_required(login_url='core:custom_login')
+def manage_blogs(request):
+    return render(request, 'admin/manage_blogs.html')
+
+@login_required(login_url='core:custom_login')
+def manage_projects(request):
+    return render(request, 'admin/manage_projects.html')
+
+@login_required(login_url='core:custom_login')
+def manage_profile(request):
+    return render(request, 'admin/manage_profile.html')
