@@ -208,30 +208,537 @@
         }
     </style>
 
-    <!-- Placeholder for Future Content -->
-    <section id="projects" class="py-20">
-        <h2 class="text-3xl font-display font-bold mb-10 border-l-4 border-accent-blue pl-4">Featured Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project cards will be injected here via Django Cotton components in the next phase -->
-            <div
-                class="glass p-6 rounded-2xl h-64 flex items-center justify-center text-gray-600 border-dashed border-2 border-gray-800">
-                Project Cards Coming Soon...
+
+    <!-- ─── WHAT I DO ─── -->
+    <section class="py-24">
+        <div class="text-center mb-14 reveal">
+            <span class="inline-block px-4 py-1.5 bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 text-xs font-bold tracking-widest uppercase rounded-full border border-teal-200 dark:border-teal-700 mb-4">The Stack</span>
+            <h2 class="text-4xl md:text-5xl font-display font-black text-slate-900 dark:text-white">What I <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-teal-500">Build</span></h2>
+            <p class="text-slate-500 mt-3 max-w-xl mx-auto">Three disciplines. One philosophy — performant, private, and financially intelligent.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+            <div class="p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:-translate-y-2 transition-transform group">
+                <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">⚙️</div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Systems Engineering</h3>
+                <p class="text-slate-500 dark:text-gray-400 text-sm leading-relaxed">Memory-safe, zero-overhead software in Rust and Go. Built for reliability and raw machine speed.</p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Rust</span>
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Go</span>
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Mojo</span>
+                </div>
             </div>
-            <div
-                class="glass p-6 rounded-2xl h-64 flex items-center justify-center text-gray-600 border-dashed border-2 border-gray-800">
-                Stay Tuned!
+            <div class="p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:-translate-y-2 transition-transform group">
+                <div class="w-14 h-14 bg-teal-100 dark:bg-teal-900/40 rounded-2xl flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">🧠</div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Local Intelligence</h3>
+                <p class="text-slate-500 dark:text-gray-400 text-sm leading-relaxed">On-device AI using Small Language Models and RAG pipelines. Data sovereignty by design, not by accident.</p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">SLMs</span>
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">ChromaDB</span>
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">RAG</span>
+                </div>
             </div>
-            <div
-                class="glass p-6 rounded-2xl h-64 flex items-center justify-center text-gray-600 border-dashed border-2 border-gray-800">
-                Building Excellence...
+            <div class="p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:-translate-y-2 transition-transform group">
+                <div class="w-14 h-14 bg-orange-100 dark:bg-orange-900/40 rounded-2xl flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">📈</div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Quantitative Finance</h3>
+                <p class="text-slate-500 dark:text-gray-400 text-sm leading-relaxed">Algorithmic forensic audits and capital-efficient tools for identifying asymmetric opportunities in markets.</p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Arion.ai</span>
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Python</span>
+                    <span class="text-xs font-bold px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">EBM</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Divider -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <hr class="h-0.5 border-t-0 bg-slate-100 dark:bg-white/5 opacity-100" />
-    </div>
+    <!-- Divider -->
+    <hr class="h-px border-t-0 bg-slate-100 dark:bg-white/5" />
+
+    <!-- ─── QUICK STATS ─── -->
+    <section class="py-16 reveal">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="text-5xl font-display font-black bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-teal-500">3+</div>
+                <p class="text-slate-500 text-sm mt-1 font-medium">Years of Code</p>
+            </div>
+            <div>
+                <div class="text-5xl font-display font-black bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-emerald-400">7+</div>
+                <p class="text-slate-500 text-sm mt-1 font-medium">Projects Shipped</p>
+            </div>
+            <div>
+                <div class="text-5xl font-display font-black bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-violet-500">5</div>
+                <p class="text-slate-500 text-sm mt-1 font-medium">Languages Mastered</p>
+            </div>
+            <div>
+                <div class="text-5xl font-display font-black bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-accent-orange">∞</div>
+                <p class="text-slate-500 text-sm mt-1 font-medium">Curiosity Level</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <hr class="h-px border-t-0 bg-slate-100 dark:bg-white/5" />
+
+    <!-- ─── PROJECT ROADMAP ─── -->
+    <section class="py-14 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 reveal">
+            <span class="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-accent-blue text-xs font-bold tracking-widest uppercase rounded-full border border-blue-200 dark:border-blue-700 mb-4">Project Roadmap</span>
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <h2 class="text-4xl md:text-5xl font-display font-black text-slate-900 dark:text-white">
+                    The Build <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-teal-500">Chronicle</span>
+                </h2>
+                <p class="text-slate-500 max-w-sm text-sm leading-relaxed">Every project, every milestone — scrolled horizontally like a timeline of conviction.</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 text-xs text-slate-400 font-medium">
+                <i data-lucide="mouse-pointer-2" class="w-4 h-4"></i>
+                Drag or scroll horizontally to explore ·
+                <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+                Use arrow keys
+            </div>
+        </div>
+
+        <!-- Scroll Track with Grid + Glow bg -->
+        <div class="relative rounded-3xl mx-2 overflow-hidden border border-slate-200/60 dark:border-white/5" style="background:linear-gradient(135deg,rgba(239,246,255,.6) 0%,rgba(255,255,255,.4) 50%,rgba(240,253,250,.6) 100%)">
+
+            <!-- Line grid overlay -->
+            <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(148,163,184,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.12) 1px,transparent 1px);background-size:40px 40px;"></div>
+
+            <!-- Glow blobs — Rose + Amber only -->
+            <div class="absolute top-1/2 left-[10%] -translate-y-1/2 w-96 h-96 rounded-full bg-rose-400/15 dark:bg-rose-500/20 blur-[100px] pointer-events-none"></div>
+            <div class="absolute top-1/2 right-[10%] -translate-y-1/2 w-96 h-96 rounded-full bg-amber-400/15 dark:bg-amber-500/20 blur-[100px] pointer-events-none"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-rose-300/10 dark:bg-rose-400/10 blur-[70px] pointer-events-none"></div>
+
+            <!-- Fade edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-blue-50/80 dark:from-obsidian to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-teal-50/80 dark:from-obsidian to-transparent z-10 pointer-events-none"></div>
+
+            <div id="roadmap-track"
+                 class="flex items-center gap-0 overflow-x-auto pt-6 pb-4 cursor-grab active:cursor-grabbing select-none"
+                 style="scrollbar-width:none; -ms-overflow-style:none;">
+
+                <!-- Spacer start -->
+                <div class="flex-shrink-0 w-16 md:w-32"></div>
+
+                <!-- Road nodes -->
+
+                <!-- Node 1: Arion.ai -->
+                <div class="roadmap-node flex-shrink-0 w-72 relative group min-h-[420px]" style="--delay:0ms">
+                    <div class="road-connector"></div>
+                    <div class="roadmap-card p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-3 transition-all ml-6 mr-6 relative">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-accent-blue bg-white dark:bg-obsidian shadow-lg shadow-accent-blue/20 flex items-center justify-center z-10">
+                            <div class="w-3 h-3 rounded-full bg-accent-blue animate-pulse"></div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold px-2.5 py-1 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 rounded-full">● Active</span>
+                                <span class="text-xs text-slate-400 font-medium">2024 →</span>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-amber-500 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg">📊</div>
+                            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">Arion.ai</h3>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed mb-4">Private quantitative engine for asymmetric stock market opportunities using EBM forensic audits and celestial cycle analysis.</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Python</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Django</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">GCP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-12 flex items-center justify-center relative">
+                    <div class="h-0.5 w-full bg-gradient-to-r from-rose-400 to-amber-400"></div>
+                    <div class="absolute w-2 h-2 rounded-full bg-amber-400 right-0 animate-pulse"></div>
+                </div>
+
+                <div class="roadmap-node flex-shrink-0 w-72 relative group" style="--delay:100ms">
+                    <div class="roadmap-card p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-rose-500/10 hover:-translate-y-3 transition-all mx-6 relative">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-teal-500 bg-white dark:bg-obsidian shadow-lg shadow-teal-500/20 flex items-center justify-center z-10">
+                            <div class="w-3 h-3 rounded-full bg-teal-500"></div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold px-2.5 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 rounded-full">In Progress</span>
+                                <span class="text-xs text-slate-400 font-medium">2025 →</span>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg">🛡️</div>
+                            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">Emerald Sentinel</h3>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed mb-4">High-fidelity Rust system monitor with zero GC overhead. Real-time CPU, memory, disk, and network telemetry at machine speed.</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Rust</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">SQLite</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">CLI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-12 flex items-center justify-center relative">
+                    <div class="h-0.5 w-full bg-gradient-to-r from-amber-400 to-rose-400"></div>
+                    <div class="absolute w-2 h-2 rounded-full bg-rose-400 right-0"></div>
+                </div>
+
+                <!-- Node 3: NIRVAN Portfolio -->
+                <div class="roadmap-node flex-shrink-0 w-72 relative group" style="--delay:200ms">
+                    <div class="roadmap-card p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:-translate-y-3 transition-all mx-6 relative">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-violet-500 bg-white dark:bg-obsidian shadow-lg shadow-violet-500/20 flex items-center justify-center z-10">
+                            <div class="w-3 h-3 rounded-full bg-violet-500 animate-pulse"></div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold px-2.5 py-1 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 rounded-full">● Active</span>
+                                <span class="text-xs text-slate-400 font-medium">2026</span>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-br from-accent-blue to-violet-600 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg">🌐</div>
+                            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">NIRVAN Portfolio</h3>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed mb-4">This very site. Django + HTMX + Alpine.js + Tailwind. Production-grade with Dockerfile, Whitenoise, and GCP Cloud Run target.</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Django</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Docker</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-12 flex items-center justify-center relative">
+                    <div class="h-0.5 w-full bg-gradient-to-r from-rose-400 to-amber-400"></div>
+                    <div class="absolute w-2 h-2 rounded-full bg-amber-400 right-0"></div>
+                </div>
+
+                <!-- Node 4: PRO.LMS -->
+                <div class="roadmap-node flex-shrink-0 w-72 relative group" style="--delay:300ms">
+                    <div class="roadmap-card p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-rose-500/10 hover:-translate-y-3 transition-all mx-6 relative">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-orange-400 bg-white dark:bg-obsidian shadow-lg shadow-orange-400/20 flex items-center justify-center z-10">
+                            <div class="w-3 h-3 rounded-full bg-orange-400"></div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-400 rounded-full">Shipped</span>
+                                <span class="text-xs text-slate-400 font-medium">2023</span>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-rose-500 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg">🎓</div>
+                            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">PRO.LMS</h3>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed mb-4">Full-featured Learning Management System with role-based access, assessments, and progress tracking for real academic institutions.</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Django</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-12 flex items-center justify-center relative">
+                    <div class="h-0.5 w-full bg-gradient-to-r from-amber-400 to-rose-400"></div>
+                    <div class="absolute w-2 h-2 rounded-full bg-rose-400 right-0"></div>
+                </div>
+
+                <!-- Node 5: Phoenix Oracle -->
+                <div class="roadmap-node flex-shrink-0 w-72 relative group" style="--delay:400ms">
+                    <div class="roadmap-card p-6 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:-translate-y-3 transition-all mx-6 relative">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-cyan-500 bg-white dark:bg-obsidian shadow-lg shadow-cyan-500/20 flex items-center justify-center z-10">
+                            <div class="w-3 h-3 rounded-full bg-cyan-500"></div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-bold px-2.5 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 rounded-full">In Progress</span>
+                                <span class="text-xs text-slate-400 font-medium">2025 →</span>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg">🔮</div>
+                            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">Phoenix Oracle</h3>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed mb-4">Commodity market predictor using 100-year Silver dataset and EBM forensic auditing to time capital deployment windows.</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Python</span>
+                                <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-100 dark:bg-white/10 rounded-full text-slate-500">Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-12 flex items-center justify-center relative">
+                    <div class="h-0.5 w-full bg-gradient-to-r from-rose-400 to-amber-400"></div>
+                    <div class="absolute w-2 h-2 rounded-full bg-amber-400 right-0"></div>
+                </div>
+
+                <!-- Node 6: What's Next -->
+                <div class="roadmap-node flex-shrink-0 w-72 relative group" style="--delay:500ms">
+                    <div class="roadmap-card p-6 rounded-3xl border border-dashed border-slate-300 dark:border-white/10 bg-white/50 dark:bg-white/5 mx-6 relative opacity-70 hover:opacity-100 hover:-translate-y-3 transition-all">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-dashed border-slate-400 bg-white dark:bg-obsidian flex items-center justify-center z-10">
+                            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                        </div>
+                        <div class="mt-2 text-center py-4">
+                            <div class="w-12 h-12 bg-slate-100 dark:bg-white/5 rounded-2xl flex items-center justify-center text-2xl mb-4 mx-auto">🚀</div>
+                            <h3 class="font-display font-bold text-slate-900 dark:text-white text-lg mb-2">What's Next?</h3>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed mb-4">The next chapter is being written. Ambitious. Precise. Capital-aware.</p>
+                            <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-1 text-xs font-bold text-accent-blue hover:gap-2 transition-all">
+                                Collaborate → <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spacer end -->
+                <div class="flex-shrink-0 w-16 md:w-32"></div>
+            </div>
+        </div>
+
+        <!-- CTA row -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3 flex items-center justify-between reveal">
+            <div class="flex gap-2">
+                <button id="road-prev" class="w-10 h-10 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-500 hover:text-accent-blue hover:border-accent-blue transition-all shadow-sm">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </button>
+                <button id="road-next" class="w-10 h-10 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-500 hover:text-accent-blue hover:border-accent-blue transition-all shadow-sm">
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <a href="{% url 'core:projects' %}" class="inline-flex items-center gap-2 text-sm font-bold text-accent-blue hover:gap-3 transition-all">
+                View all projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-24">
+        <div class="text-center mb-14 reveal">
+            <span class="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-accent-blue text-xs font-bold tracking-widest uppercase rounded-full border border-blue-200 dark:border-blue-700 mb-4">Explore</span>
+            <h2 class="text-4xl md:text-5xl font-display font-black text-slate-900 dark:text-white">Every <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-teal-500">Corner</span></h2>
+            <p class="text-slate-500 mt-3 max-w-xl mx-auto">Dive deeper — each section of this site tells a different part of the story.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+
+            <!-- About Card -->
+            <a href="{% url 'core:about' %}" class="group p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/10 transition-all flex gap-6 items-start">
+                <div class="w-14 h-14 flex-shrink-0 bg-emerald-100 dark:bg-emerald-900/40 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">🧑‍💻</div>
+                <div>
+                    <div class="flex items-center gap-2 mb-2"><h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">About Me</h3><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors"></i></div>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">The philosophy, the tech pillars, the projects and the person behind it all. Systems meet capital.</p>
+                    <span class="inline-block mt-4 text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 rounded-full border border-emerald-200 dark:border-emerald-700">Blue → Emerald</span>
+                </div>
+            </a>
+
+            <!-- Portfolio Card -->
+            <a href="{% url 'core:portfolio' %}" class="group p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:shadow-rose-500/10 transition-all flex gap-6 items-start">
+                <div class="w-14 h-14 flex-shrink-0 bg-rose-100 dark:bg-rose-900/40 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">📊</div>
+                <div>
+                    <div class="flex items-center gap-2 mb-2"><h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">Portfolio</h3><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-rose-500 transition-colors"></i></div>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">Career roadmap, animated skills constellation, education timeline — the full career arc visualised.</p>
+                    <span class="inline-block mt-4 text-xs font-bold text-rose-600 bg-rose-50 dark:bg-rose-900/30 px-3 py-1 rounded-full border border-rose-200 dark:border-rose-700">Blue → Rose</span>
+                </div>
+            </a>
+
+            <!-- Projects Card -->
+            <a href="{% url 'core:projects' %}" class="group p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:shadow-amber-500/10 transition-all flex gap-6 items-start">
+                <div class="w-14 h-14 flex-shrink-0 bg-amber-100 dark:bg-amber-900/40 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">🔨</div>
+                <div>
+                    <div class="flex items-center gap-2 mb-2"><h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">Projects</h3><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-amber-500 transition-colors"></i></div>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">Arion.ai, Emerald Sentinel, PRO.LMS, Phoenix Oracle — every bet, every build, every detail.</p>
+                    <span class="inline-block mt-4 text-xs font-bold text-amber-600 bg-amber-50 dark:bg-amber-900/30 px-3 py-1 rounded-full border border-amber-200 dark:border-amber-700">Blue → Amber</span>
+                </div>
+            </a>
+
+            <!-- Blogs Card -->
+            <a href="{% url 'core:blogs' %}" class="group p-8 bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:shadow-violet-500/10 transition-all flex gap-6 items-start">
+                <div class="w-14 h-14 flex-shrink-0 bg-violet-100 dark:bg-violet-900/40 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">✍️</div>
+                <div>
+                    <div class="flex items-center gap-2 mb-2"><h3 class="text-lg font-display font-bold text-slate-900 dark:text-white">The Codex</h3><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-violet-500 transition-colors"></i></div>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">Deep dives into systems, finance, and local AI. One well-reasoned article per week. No noise.</p>
+                    <span class="inline-block mt-4 text-xs font-bold text-violet-600 bg-violet-50 dark:bg-violet-900/30 px-3 py-1 rounded-full border border-violet-200 dark:border-violet-700">Blue → Violet</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <hr class="h-px border-t-0 bg-slate-100 dark:bg-white/5" />
+
+    <!-- ─── FEATURED PROJECT SPOTLIGHT ─── -->
+    <section class="py-24 reveal">
+        <div class="text-center mb-14">
+            <span class="inline-block px-4 py-1.5 bg-amber-50 dark:bg-amber-900/30 text-amber-600 text-xs font-bold tracking-widest uppercase rounded-full border border-amber-200 dark:border-amber-700 mb-4">Flagship Work</span>
+            <h2 class="text-4xl md:text-5xl font-display font-black text-slate-900 dark:text-white">Arion<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-amber-500">.ai</span></h2>
+        </div>
+        <div class="rounded-[2.5rem] overflow-hidden relative" style="background:linear-gradient(135deg,#1e40af 0%,#d97706 100%)">
+            <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:24px 24px;"></div>
+            <div class="absolute top-0 right-0 w-80 h-80 bg-amber-400/20 rounded-full blur-[100px]"></div>
+            <div class="relative z-10 p-10 md:p-14 text-white flex flex-col md:flex-row gap-12 items-center justify-between">
+                <div class="max-w-xl">
+                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest mb-4">Finance × AI × Python</p>
+                    <h3 class="text-3xl md:text-4xl font-display font-black mb-4 leading-tight">A private quantitative engine for finding asymmetric market opportunities.</h3>
+                    <p class="text-white/70 leading-relaxed mb-8">Combining EBM forensic audits, 100-year celestial cycle data, and algorithmic backtesting to decode market structure that institutional analysts consistently miss.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="{% url 'core:projects' %}" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-amber-700 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> Explore Project
+                        </a>
+                        <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-2 px-6 py-3 bg-white/15 text-white font-bold rounded-full hover:scale-105 transition-transform border border-white/30">
+                            Collaborate →
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 hidden md:grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 text-center">
+                        <div class="text-3xl font-black">100yr</div><div class="text-white/60 text-xs mt-1">Historical Data</div>
+                    </div>
+                    <div class="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 text-center">
+                        <div class="text-3xl font-black">EBM</div><div class="text-white/60 text-xs mt-1">Forensic Audit</div>
+                    </div>
+                    <div class="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 text-center">
+                        <div class="text-3xl font-black">RAG</div><div class="text-white/60 text-xs mt-1">AI Pipeline</div>
+                    </div>
+                    <div class="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 text-center">
+                        <div class="text-3xl font-black">GCP</div><div class="text-white/60 text-xs mt-1">Cloud Deploy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <hr class="h-px border-t-0 bg-slate-100 dark:bg-white/5" />
+
+    <!-- ─── ALTERNATE HERO (for comparison) ─── -->
+    <section class="py-24">
+        <div class="text-center mb-10 reveal">
+            <span class="inline-block px-4 py-1.5 bg-slate-100 dark:bg-white/10 text-slate-500 text-xs font-bold tracking-widest uppercase rounded-full border border-slate-200 dark:border-white/10 mb-4">✦ Hero v2 — Alternative Design (pick one!)</span>
+        </div>
+
+        <div class="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-slate-900 via-accent-blue/20 to-slate-900 dark:from-obsidian dark:via-accent-blue/10 dark:to-obsidian border border-white/10 p-10 md:p-20 reveal">
+            <!-- Ambient blobs -->
+            <div class="absolute top-0 left-0 w-96 h-96 bg-accent-blue/20 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-teal-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="relative z-10 flex flex-col md:flex-row items-center gap-12 justify-between">
+                <!-- Text -->
+                <div class="max-w-xl space-y-6 text-white">
+                    <div class="flex items-center gap-3">
+                        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-500"></span></span>
+                        <span class="text-teal-400 text-xs font-bold tracking-widest uppercase">Available for Work</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-display font-black leading-tight">
+                        Adityaraj<br>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue-light to-teal-400">Pandey</span>
+                    </h1>
+                    <p class="text-white/60 text-lg leading-relaxed">Systems Engineer · Quant Analyst · Local AI Researcher.<br>Building where performance meets capital intelligence.</p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="{% url 'core:projects' %}" class="px-7 py-3.5 bg-gradient-to-r from-accent-blue to-teal-500 text-white font-bold rounded-full shadow-lg shadow-accent-blue/30 hover:scale-105 transition-transform flex items-center gap-2">
+                            <i data-lucide="code-2" class="w-4 h-4"></i> See My Work
+                        </a>
+                        <a href="{% url 'core:contact' %}" class="px-7 py-3.5 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/20 flex items-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i> Get in Touch
+                        </a>
+                    </div>
+                    <!-- Tech row -->
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                        <span class="text-xs text-white/40 font-bold self-center">Stack:</span>
+                        <span class="text-xs font-bold px-3 py-1 bg-white/10 rounded-full text-white/70">🦀 Rust</span>
+                        <span class="text-xs font-bold px-3 py-1 bg-white/10 rounded-full text-white/70">🐍 Python</span>
+                        <span class="text-xs font-bold px-3 py-1 bg-white/10 rounded-full text-white/70">🐹 Go</span>
+                        <span class="text-xs font-bold px-3 py-1 bg-white/10 rounded-full text-white/70">🎸 Django</span>
+                        <span class="text-xs font-bold px-3 py-1 bg-white/10 rounded-full text-white/70">☁️ GCP</span>
+                    </div>
+                </div>
+
+                <!-- Stats panel -->
+                <div class="grid grid-cols-2 gap-4 flex-shrink-0">
+                    <div class="p-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 text-center text-white hover:-translate-y-1 transition-transform">
+                        <div class="text-4xl font-display font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">3+</div>
+                        <div class="text-white/40 text-xs mt-1 font-medium">Years Coding</div>
+                    </div>
+                    <div class="p-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 text-center text-white hover:-translate-y-1 transition-transform">
+                        <div class="text-4xl font-display font-black bg-clip-text text-transparent bg-gradient-to-b from-teal-400 to-teal-400/60">7+</div>
+                        <div class="text-white/40 text-xs mt-1 font-medium">Projects</div>
+                    </div>
+                    <div class="p-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 text-center text-white hover:-translate-y-1 transition-transform">
+                        <div class="text-4xl font-display font-black bg-clip-text text-transparent bg-gradient-to-b from-blue-400 to-blue-400/60">5</div>
+                        <div class="text-white/40 text-xs mt-1 font-medium">Languages</div>
+                    </div>
+                    <div class="p-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 text-center text-white hover:-translate-y-1 transition-transform">
+                        <div class="text-4xl font-display font-black bg-clip-text text-transparent bg-gradient-to-b from-amber-400 to-amber-400/60">∞</div>
+                        <div class="text-white/40 text-xs mt-1 font-medium">Curiosity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <hr class="h-px border-t-0 bg-slate-100 dark:bg-white/5" />
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // ─── Scroll Reveal ───
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+            if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
+        });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // ─── Roadmap: Drag to scroll ───
+    const track = document.getElementById('roadmap-track');
+    if (track) {
+        let isDown = false, startX, scrollLeft;
+        track.addEventListener('mousedown', e => {
+            isDown = true;
+            track.classList.add('active');
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+        });
+        track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('active'); });
+        track.addEventListener('mouseup', () => { isDown = false; track.classList.remove('active'); });
+        track.addEventListener('mousemove', e => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+        });
+
+        // Touch support
+        let touchStartX = 0, touchScrollLeft = 0;
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].pageX;
+            touchScrollLeft = track.scrollLeft;
+        }, { passive: true });
+        track.addEventListener('touchmove', e => {
+            const dx = touchStartX - e.touches[0].pageX;
+            track.scrollLeft = touchScrollLeft + dx;
+        }, { passive: true });
+
+        // Arrow buttons
+        const SCROLL_AMT = 320;
+        document.getElementById('road-prev')?.addEventListener('click', () => {
+            track.scrollBy({ left: -SCROLL_AMT, behavior: 'smooth' });
+        });
+        document.getElementById('road-next')?.addEventListener('click', () => {
+            track.scrollBy({ left: SCROLL_AMT, behavior: 'smooth' });
+        });
+
+        // Keyboard arrows
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight') track.scrollBy({ left: SCROLL_AMT, behavior: 'smooth' });
+            if (e.key === 'ArrowLeft')  track.scrollBy({ left: -SCROLL_AMT, behavior: 'smooth' });
+        });
+
+        // Entrance animation for roadmap nodes
+        const nodeObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    const delay = e.target.style.getPropertyValue('--delay') || '0ms';
+                    setTimeout(() => {
+                        e.target.style.opacity = '1';
+                        e.target.style.transform = 'translateY(0)';
+                    }, parseInt(delay));
+                    nodeObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.roadmap-node').forEach(node => {
+            node.style.opacity = '0';
+            node.style.transform = 'translateY(20px)';
+            node.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            nodeObs.observe(node);
+        });
+    }
+});
+</script>
+
 {% endblock %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +57,7 @@
 
     {% block extra_head %}{% endblock %}
 </head>
-<body class="antialiased font-sans selection:bg-accent-purple selection:text-white bg-[#F8FAFC] dark:bg-obsidian text-slate-900 dark:text-slate-200 transition-colors duration-300" 
+<body class="antialiased font-sans overflow-x-hidden selection:bg-accent-purple selection:text-white bg-[#F8FAFC] dark:bg-obsidian text-slate-900 dark:text-slate-200 transition-colors duration-300" 
       hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
       x-data="{ 
         darkMode: localStorage.getItem('theme') === 'dark',

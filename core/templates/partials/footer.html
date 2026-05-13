@@ -1,66 +1,112 @@
 <!-- Footer Section -->
-<footer class="mt-20 border-t border-slate-200 dark:border-gray-800 pt-20 pb-10 bg-slate-50/50 dark:bg-transparent">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Subscribe Section -->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 mb-20 relative">
-            
-            <!-- Left Side: Headline -->
-            <div class="w-full md:w-1/2 space-y-4">
-                <p class="text-accent-blue font-semibold text-sm tracking-widest uppercase">Subscribe</p>
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white leading-tight">
-                    Subscribe To Get <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-blue-500 to-accent-orange">Latest Updates</span><br>From ORION
-                </h2>
-                
-                <!-- Decorative Swirly Arrow (Simplified SVG) -->
-                <div class="absolute -bottom-10 right-1/2 translate-x-1/2 hidden md:block opacity-20">
-                    <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 55C20 55 40 10 70 10C100 10 115 45 115 45" class="stroke-slate-900 dark:stroke-white" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
-                        <path d="M115 45L108 38M115 45L108 52" class="stroke-slate-900 dark:stroke-white" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
+<footer class="mt-24 relative overflow-hidden">
+
+    <!-- Top gradient divider -->
+    <div class="h-px bg-gradient-to-r from-transparent via-accent-blue/40 to-transparent"></div>
+
+    <!-- Main footer body -->
+    <div class="bg-slate-50 dark:bg-obsidian/60 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
+
+            <!-- ── Top Grid ── -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                <!-- Brand Column -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Logo -->
+                    <a href="{% url 'core:index' %}" class="flex items-center gap-3 group w-fit">
+                        <div class="relative w-9 h-9">
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-accent-blue to-blue-700 shadow-lg shadow-accent-blue/20"></div>
+                            <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
+                            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-blue-200 rounded-full"></div>
+                        </div>
+                        <span class="font-display text-2xl font-black tracking-tight text-slate-900 dark:text-white">
+                            NIRVAN
+                        </span>
+                    </a>
+                    <p class="text-slate-500 dark:text-gray-400 leading-relaxed max-w-sm text-sm">
+                        Building systems at the intersection of low-level performance engineering and quantitative financial intelligence. Code that thinks, capital that compounds.
+                    </p>
+
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-3">
+                        <a href="https://github.com/ArionGD" target="_blank"
+                           class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-400 dark:hover:border-white/30 transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/adityarajpandey" target="_blank"
+                           class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-gray-400 hover:text-blue-600 hover:border-blue-300 transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/ArionGD" target="_blank"
+                           class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-400 dark:hover:border-white/30 transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:adityaraj@example.com"
+                           class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-gray-400 hover:text-cyan-600 hover:border-cyan-300 transition-all shadow-sm">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-5">
+                    <h4 class="text-sm font-black uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-blue-500">Navigate</h4>
+                    <ul class="space-y-3">
+                        <li><a href="{% url 'core:index' %}"     class="text-sm text-slate-500 dark:text-gray-400 hover:text-accent-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Home</a></li>
+                        <li><a href="{% url 'core:about' %}"     class="text-sm text-slate-500 dark:text-gray-400 hover:text-accent-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>About</a></li>
+                        <li><a href="{% url 'core:portfolio' %}" class="text-sm text-slate-500 dark:text-gray-400 hover:text-accent-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Portfolio</a></li>
+                        <li><a href="{% url 'core:blogs' %}"     class="text-sm text-slate-500 dark:text-gray-400 hover:text-accent-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Blogs</a></li>
+                        <li><a href="{% url 'core:projects' %}"  class="text-sm text-slate-500 dark:text-gray-400 hover:text-accent-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Projects</a></li>
+                        <li><a href="{% url 'core:contact' %}"   class="text-sm text-slate-500 dark:text-gray-400 hover:text-accent-blue dark:hover:text-blue-400 transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="space-y-5">
+                    <h4 class="text-sm font-black uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-blue-500">Stay in the Signal</h4>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">One article per week on systems, finance, or AI. No noise.</p>
+                    <form class="space-y-3" onsubmit="footerSubscribe(event)">
+                        {% csrf_token %}
+                        <input type="email" placeholder="your@email.com"
+                               class="w-full px-4 py-3 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-accent-blue focus:ring-4 focus:ring-accent-blue/10 transition-all">
+                        <button type="submit"
+                                class="w-full px-4 py-3 bg-gradient-to-r from-accent-blue to-blue-700 text-white font-bold rounded-xl text-sm hover:scale-[1.02] transition-transform shadow-lg shadow-accent-blue/20">
+                            Subscribe →
+                        </button>
+                    </form>
+                    <div id="footer-sub-toast" class="hidden text-xs text-emerald-600 dark:text-emerald-400 font-medium">✅ You're subscribed!</div>
                 </div>
             </div>
 
-            <!-- Right Side: Form -->
-            <div class="w-full md:w-5/12 space-y-6">
-                <p class="text-slate-500 dark:text-gray-400 text-sm leading-relaxed">
-                    Stay ahead with exclusive insights into our latest digital engineering projects and professional tech stack updates.
+            <!-- ── Bottom Bar ── -->
+            <div class="pt-8 border-t border-slate-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-slate-400 dark:text-gray-600">
+                    © {% now "Y" %} <span class="font-bold text-slate-500 dark:text-gray-500">Adityaraj Pandey</span> · All rights reserved · Built with the NIRVAN Engine
                 </p>
-                <form class="flex w-full" hx-post="/subscribe/" hx-swap="outerHTML">
-                    {% csrf_token %}
-                    <input type="email" name="email" placeholder="Enter your email" 
-                           class="flex-grow bg-white dark:bg-white/5 border border-slate-200 dark:border-gray-700 text-slate-900 dark:text-white px-6 py-4 rounded-l-xl focus:outline-none focus:border-accent-blue transition-all">
-                    <button type="submit" class="bg-accent-blue hover:bg-blue-600 text-white px-8 py-4 rounded-r-xl font-bold transition-all">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Brand & Links Section -->
-        <div class="flex flex-col md:flex-row justify-between items-center py-10 border-t border-slate-200 dark:border-gray-800/50 gap-6">
-            <div class="flex items-center space-x-2">
-                <div class="w-6 h-6 bg-accent-blue rounded-full flex items-center justify-center scale-75">
-                    <div class="w-1 h-1 bg-white rounded-full mx-0.5"></div>
-                    <div class="w-1 h-1 bg-white rounded-full mx-0.5"></div>
+                <div class="flex items-center gap-2 text-xs text-slate-400 dark:text-gray-600">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    All systems operational
                 </div>
-                <span class="text-2xl font-black text-slate-900 dark:text-white tracking-tight">ORION</span>
             </div>
-            
-            <nav class="flex flex-wrap justify-center gap-8 text-slate-500 dark:text-gray-400 font-medium">
-                <a href="{% url 'core:index' %}" class="hover:text-accent-blue transition-colors">Home</a>
-                <a href="{% url 'core:about' %}" class="hover:text-accent-blue transition-colors">About</a>
-                <a href="#portfolio" class="hover:text-accent-blue transition-colors">Portfolio</a>
-                <a href="#blogs" class="hover:text-accent-blue transition-colors">Blogs</a>
-                <a href="{% url 'core:contact' %}" class="hover:text-accent-blue transition-colors">Contact</a>
-            </nav>
-        </div>
 
-        <!-- Copyright -->
-        <div class="text-center pt-8 border-t border-slate-200 dark:border-gray-800/30">
-            <p class="text-slate-400 dark:text-gray-600 text-xs">
-                &copy; Copyright 2016 – {% now "Y" %} | All Rights Reserved | Built with ORION Engine
-            </p>
         </div>
     </div>
 </footer>
+
+<script>
+function footerSubscribe(e) {
+    e.preventDefault();
+    document.getElementById('footer-sub-toast').classList.remove('hidden');
+    setTimeout(() => document.getElementById('footer-sub-toast').classList.add('hidden'), 5000);
+}
+</script>

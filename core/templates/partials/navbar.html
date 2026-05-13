@@ -1,63 +1,162 @@
 <!-- Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-obsidian/90 backdrop-blur-md border-b border-slate-100 dark:border-accent-blue/20 transition-all duration-300" x-data="{ open: false }">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-20 items-center">
-            
-            <!-- Logo Section -->
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-accent-blue rounded-full flex items-center justify-center">
-                    <div class="w-1.5 h-1.5 bg-white rounded-full mx-0.5"></div>
-                    <div class="w-1.5 h-1.5 bg-white rounded-full mx-0.5"></div>
+<nav class="fixed top-0 w-full z-50 transition-all duration-300"
+     x-data="{ open: false, scrolled: false }"
+     x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 20)">
+
+    <!-- Glass bar that intensifies on scroll -->
+    <div :class="scrolled
+        ? 'bg-white/95 dark:bg-obsidian/95 shadow-lg shadow-slate-200/50 dark:shadow-black/30 border-b border-slate-200/80 dark:border-white/10'
+        : 'bg-white/70 dark:bg-obsidian/70 border-b border-slate-100/50 dark:border-white/5'"
+         class="backdrop-blur-xl transition-all duration-300">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-[72px] items-center gap-8">
+
+                <!-- ── Logo ── -->
+                <a href="{% url 'core:index' %}" class="flex items-center gap-3 flex-shrink-0 group">
+                    <!-- Animated orbit logo mark -->
+                    <div class="relative w-9 h-9">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-accent-blue to-blue-700 shadow-lg shadow-accent-blue/30 group-hover:shadow-accent-blue/50 transition-shadow"></div>
+                        <div class="absolute inset-0 rounded-full border-2 border-white/20 animate-spin" style="animation-duration:8s"></div>
+                        <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full"></div>
+                        <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-blue-200 rounded-full"></div>
+                    </div>
+                    <span class="font-display text-xl font-black tracking-tight text-slate-900 dark:text-white group-hover:text-accent-blue dark:group-hover:text-blue-400 transition-colors">
+                        NIRVAN
+                    </span>
+                </a>
+
+                <!-- ── Desktop Nav ── -->
+                <div class="hidden md:flex items-center gap-1 text-sm font-bold">
+                    <!-- Home -->
+                    <a href="{% url 'core:index' %}"
+                       class="relative px-4 py-2 rounded-xl transition-all {% if request.resolver_match.url_name == 'index' %}text-accent-blue{% else %}text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5{% endif %} group">
+                        Home
+                        {% if request.resolver_match.url_name == 'index' %}
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"></span>
+                        {% endif %}
+                    </a>
+
+                    <!-- About -->
+                    <a href="{% url 'core:about' %}"
+                       class="relative px-4 py-2 rounded-xl transition-all {% if request.resolver_match.url_name == 'about' %}text-accent-blue{% else %}text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5{% endif %} group">
+                        About
+                        {% if request.resolver_match.url_name == 'about' %}
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"></span>
+                        {% endif %}
+                    </a>
+
+                    <!-- Portfolio -->
+                    <a href="{% url 'core:portfolio' %}"
+                       class="relative px-4 py-2 rounded-xl transition-all {% if request.resolver_match.url_name == 'portfolio' %}text-accent-blue{% else %}text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5{% endif %} group">
+                        Portfolio
+                        {% if request.resolver_match.url_name == 'portfolio' %}
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"></span>
+                        {% endif %}
+                    </a>
+
+                    <!-- Blogs -->
+                    <a href="{% url 'core:blogs' %}"
+                       class="relative px-4 py-2 rounded-xl transition-all {% if request.resolver_match.url_name == 'blogs' %}text-accent-blue{% else %}text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5{% endif %} group">
+                        Blogs
+                        {% if request.resolver_match.url_name == 'blogs' %}
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"></span>
+                        {% endif %}
+                    </a>
+
+                    <!-- Projects -->
+                    <a href="{% url 'core:projects' %}"
+                       class="relative px-4 py-2 rounded-xl transition-all {% if request.resolver_match.url_name == 'projects' %}text-accent-blue{% else %}text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5{% endif %} group">
+                        Projects
+                        {% if request.resolver_match.url_name == 'projects' %}
+                        <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-blue"></span>
+                        {% endif %}
+                    </a>
                 </div>
-                <a href="{% url 'core:index' %}" class="font-display text-2xl font-black tracking-tight text-slate-900 dark:text-white">
-                    PROFILE
-                </a>
-            </div>
-            
-            <!-- Desktop Menu (Centered) -->
-            <div class="hidden md:flex space-x-8 text-sm font-bold text-slate-500 dark:text-gray-400">
-                <a href="{% url 'core:index' %}" class="text-accent-blue transition-colors">Home</a>
-                <a href="{% url 'core:about' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
-                <a href="{% url 'core:portfolio' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">Portfolio</a>
-                <a href="{% url 'core:blogs' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">Blogs</a>
-                <a href="{% url 'core:projects' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
-            </div>
 
-            <!-- Right Actions -->
-            <div class="hidden md:flex items-center space-x-6">
-                <!-- Theme Toggle Button -->
-                <button @click="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/5 text-slate-500 dark:text-gray-400 transition-all duration-300" aria-label="Toggle Theme">
-                    <svg x-show="!darkMode" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path></svg>
-                    <svg x-show="darkMode" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                </button>
+                <!-- ── Right Actions ── -->
+                <div class="hidden md:flex items-center gap-3 flex-shrink-0">
 
-                <a href="{% url 'core:contact' %}" class="px-8 py-3 bg-gradient-to-r from-accent-blue to-blue-600 text-white rounded-2xl font-bold transition-all shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/40">
-                    Contact
-                </a>
-            </div>
+                    <!-- Theme Toggle -->
+                    <button @click="toggleTheme()"
+                            class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 text-slate-500 dark:text-gray-400 transition-all"
+                            aria-label="Toggle Theme">
+                        <svg x-show="!darkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        <svg x-show="darkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
 
-            <!-- Mobile menu Actions -->
-            <div class="md:hidden flex items-center space-x-4">
-                <button @click="toggleTheme()" class="p-2 rounded-full text-slate-600 dark:text-gray-300">
-                    <svg x-show="!darkMode" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path></svg>
-                    <svg x-show="darkMode" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                </button>
-                <button @click="open = !open" class="text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+                    <!-- GitHub -->
+                    <a href="https://github.com/ArionGD" target="_blank"
+                       class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 text-slate-500 dark:text-gray-400 transition-all">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Contact CTA -->
+                    <a href="{% url 'core:contact' %}"
+                       class="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-accent-blue to-blue-700 text-white rounded-xl font-bold text-sm shadow-lg shadow-accent-blue/25 hover:shadow-accent-blue/40 hover:scale-105 transition-all">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        Contact
+                    </a>
+                </div>
+
+                <!-- ── Mobile Right ── -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button @click="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-xl text-slate-500 dark:text-gray-400">
+                        <svg x-show="!darkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        <svg x-show="darkMode" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+                    <button @click="open = !open"
+                            class="w-9 h-9 flex items-center justify-center rounded-xl text-slate-600 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            <path x-show="open"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div x-show="open" x-transition class="md:hidden bg-white dark:bg-[#080C14] border-t border-slate-200 dark:border-gray-800">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#home" class="block px-3 py-2 rounded-md text-slate-600 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-gray-800 font-bold">Home</a>
-            <a href="#about" class="block px-3 py-2 rounded-md text-slate-600 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-gray-800 font-bold">About Us</a>
-            <a href="#services" class="block px-3 py-2 rounded-md text-slate-600 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-gray-800 font-bold">Services</a>
+    <!-- ── Mobile Menu ── -->
+    <div x-show="open"
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 -translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-2"
+         class="md:hidden bg-white/95 dark:bg-obsidian/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+            <a href="{% url 'core:index' %}"   class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all {% if request.resolver_match.url_name == 'index' %}text-accent-blue bg-blue-50 dark:bg-blue-900/20{% else %}text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/5{% endif %}">
+                <i data-lucide="home" class="w-4 h-4"></i> Home
+            </a>
+            <a href="{% url 'core:about' %}"   class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all {% if request.resolver_match.url_name == 'about' %}text-accent-blue bg-blue-50 dark:bg-blue-900/20{% else %}text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/5{% endif %}">
+                <i data-lucide="user" class="w-4 h-4"></i> About
+            </a>
+            <a href="{% url 'core:portfolio' %}" class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all {% if request.resolver_match.url_name == 'portfolio' %}text-accent-blue bg-blue-50 dark:bg-blue-900/20{% else %}text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/5{% endif %}">
+                <i data-lucide="briefcase" class="w-4 h-4"></i> Portfolio
+            </a>
+            <a href="{% url 'core:blogs' %}"   class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all {% if request.resolver_match.url_name == 'blogs' %}text-accent-blue bg-blue-50 dark:bg-blue-900/20{% else %}text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/5{% endif %}">
+                <i data-lucide="book-open" class="w-4 h-4"></i> Blogs
+            </a>
+            <a href="{% url 'core:projects' %}" class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all {% if request.resolver_match.url_name == 'projects' %}text-accent-blue bg-blue-50 dark:bg-blue-900/20{% else %}text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/5{% endif %}">
+                <i data-lucide="code-2" class="w-4 h-4"></i> Projects
+            </a>
+            <div class="pt-2 border-t border-slate-200 dark:border-white/10">
+                <a href="{% url 'core:contact' %}" class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-accent-blue to-blue-700 text-white font-bold shadow-lg">
+                    <i data-lucide="send" class="w-4 h-4"></i> Contact Me
+                </a>
+            </div>
         </div>
     </div>
 </nav>
