@@ -14,14 +14,20 @@ Build a premium, high-performance personal portfolio using the **D-A-H-T** stack
 
 ## 🎨 Design Vision (ORION Executive Aesthetic)
 - **Branding**: ORION (Professional, High-Trust, Modern)
-- **Theme**: Light-Mode Default (Glassmorphic) / Dark Mode Support.
-- **Color Palette**: 
-    - **Primary**: Professional Dark Blue (#1E40AF)
-    - **Secondary**: Accent Orange (#FFA500)
+- **Theme Logic**: Light-Mode Default / Slate-900 Dark Mode.
+- **Color Palette (Design Tokens)**: 
+    - **Primary (Blue)**: `#1E40AF` (Tailwind `accent-blue`)
+    - **Secondary (Orange)**: `#FFA500` (Tailwind `accent-orange`)
+    - **Dark BG (Slate-900)**: `#0F172A` (Tailwind `obsidian`)
+    - **Light BG (Slate-50)**: `#F8FAFC`
 - **Typography**: 
-    - **Headings**: **Outfit** (Geometric, Bold)
-    - **Body**: **Plus Jakarta Sans** (Premium, High-Legibility)
-- **Style**: Dynamic background "shine spots", orbiting planetary icon systems.
+    - **Headings/Display**: **Outfit** (Geometric, Bold/Black)
+    - **Body/UI**: **Plus Jakarta Sans** (Premium, High-Legibility)
+- **Google-Style Gradient Logic**:
+    - **Global/Home**: `from-[#1E40AF] to-[#FFA500]` (Blue to Orange)
+    - **About Page**: `from-[#1E40AF] to-[#10B981]` (Blue to Emerald-500)
+    - **Contact Page**: `from-[#1E40AF] to-[#22D3EE]` (Blue to Cyan-400)
+- **Style Keynote**: Dynamic background "shine spots", perfectly circular planetary orbits (small/subtle), and glassmorphic navigation.
 
 ## 🏗️ Core Modules
 1. **Core**: General settings, Landing page, Navigation.

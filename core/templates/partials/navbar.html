@@ -1,5 +1,5 @@
 <!-- Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#080C14]/90 backdrop-blur-md border-b border-slate-100 dark:border-accent-purple/20 transition-all duration-300" x-data="{ open: false }">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-obsidian/90 backdrop-blur-md border-b border-slate-100 dark:border-accent-blue/20 transition-all duration-300" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20 items-center">
             
@@ -9,15 +9,15 @@
                     <div class="w-1.5 h-1.5 bg-white rounded-full mx-0.5"></div>
                     <div class="w-1.5 h-1.5 bg-white rounded-full mx-0.5"></div>
                 </div>
-                <a href="{% url 'core:index' %}" class="font-display text-2xl font-black tracking-tight text-slate-900 dark:text-white uppercase">
-                    ORION
+                <a href="{% url 'core:index' %}" class="font-display text-2xl font-black tracking-tight text-slate-900 dark:text-white">
+                    PROFILE
                 </a>
             </div>
             
             <!-- Desktop Menu (Centered) -->
             <div class="hidden md:flex space-x-8 text-sm font-bold text-slate-500 dark:text-gray-400">
-                <a href="#home" class="text-accent-blue transition-colors">Home</a>
-                <a href="#about" class="hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
+                <a href="{% url 'core:index' %}" class="text-accent-blue transition-colors">Home</a>
+                <a href="{% url 'core:about' %}" class="hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
                 <a href="#portfolio" class="hover:text-slate-900 dark:hover:text-white transition-colors">Portfolio</a>
                 <a href="#blogs" class="hover:text-slate-900 dark:hover:text-white transition-colors">Blogs</a>
                 <a href="#projects" class="hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
@@ -31,7 +31,7 @@
                     <svg x-show="darkMode" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 </button>
 
-                <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-accent-blue to-blue-600 text-white rounded-2xl font-bold transition-all shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/40">
+                <a href="{% url 'core:contact' %}" class="px-8 py-3 bg-gradient-to-r from-accent-blue to-blue-600 text-white rounded-2xl font-bold transition-all shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/40">
                     Contact
                 </a>
             </div>
