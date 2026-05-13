@@ -78,5 +78,22 @@ def manage_projects(request):
     return render(request, 'admin/manage_projects.html')
 
 @login_required(login_url='core:custom_login')
+def project_create(request):
+    return render(request, 'admin/projects/create_project.html')
+
+@login_required(login_url='core:custom_login')
+def project_edit(request, slug):
+    return render(request, 'admin/projects/edit_project.html', {'slug': slug})
+
+@login_required(login_url='core:custom_login')
+def project_delete(request, slug):
+    # In a real app, delete the model instance here.
+    return redirect('core:manage_projects')
+
+@login_required(login_url='core:custom_login')
+def project_preview(request, slug):
+    return render(request, 'admin/projects/preview_project.html', {'slug': slug})
+
+@login_required(login_url='core:custom_login')
 def manage_profile(request):
     return render(request, 'admin/manage_profile.html')

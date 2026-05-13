@@ -21,5 +21,9 @@ urlpatterns = [
     path('portal/blogs/<slug:slug>/delete/', views.blog_delete, name='blog_delete'),
     path('portal/blogs/<slug:slug>/preview/', views.blog_preview, name='blog_preview'),
     path('portal/projects/', views.manage_projects, name='manage_projects'),
+    path('portal/projects/create/', views.project_create, name='project_create'),
+    path('portal/projects/<slug:slug>/edit/', views.project_edit, name='project_edit'),
+    path('portal/projects/<slug:slug>/delete/', views.project_delete, name='project_delete'),
+    path('portal/projects/<slug:slug>/preview/', views.project_preview, name='project_preview'),
     path('portal/profile/', views.manage_profile, name='manage_profile'),
 ]
