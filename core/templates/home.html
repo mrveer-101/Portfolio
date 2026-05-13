@@ -58,53 +58,44 @@
                     
                     <!-- Outer Orbit Group (Tilted Left) -->
                     <div class="absolute inset-0 flex items-center justify-center -rotate-[45deg]">
-                        <!-- Primary (Outer) Orbit -->
-                        <div class="absolute w-[650px] h-[650px] border border-slate-200/50 dark:border-white/5 rounded-full"></div>
-                        
-                        <!-- Planet 1 (Python) -->
-                        <div class="absolute w-[650px] h-[650px] animate-spin-slow">
+                        <!-- Primary (Outer) Orbit & Rotating Container -->
+                        <div class="absolute w-[650px] h-[650px] border border-slate-200/50 dark:border-white/5 rounded-full animate-spin-slow">
+                            
+                            <!-- Planet 1 (Top) - Python -->
                             <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow">
                                 <img src="{% static 'icons/py.webp' %}" alt="Python" class="w-full h-full object-contain p-[2px] -rotate-[45deg]">
                             </div>
-                        </div>
-                        
-                        <!-- Planet 2 (Rust) -->
-                        <div class="absolute w-[650px] h-[650px] animate-spin-slow [animation-delay:-5s]">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow [animation-delay:-5s]">
+
+                            <!-- Planet 2 (Bottom) - Rust -->
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow">
                                 <img src="{% static 'icons/rust.webp' %}" alt="Rust" class="w-full h-full object-contain p-[2px] -rotate-[45deg]">
                             </div>
-                        </div>
 
-                        <!-- Planet 3 (JS) -->
-                        <div class="absolute w-[650px] h-[650px] animate-spin-slow [animation-delay:-10s]">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow [animation-delay:-10s]">
+                            <!-- Planet 3 (Left) - JS -->
+                            <div class="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow">
                                 <img src="{% static 'icons/js.png' %}" alt="JavaScript" class="w-full h-full object-contain p-[2px] -rotate-[45deg]">
                             </div>
-                        </div>
 
-                        <!-- Planet 4 (Gemini) -->
-                        <div class="absolute w-[650px] h-[650px] animate-spin-slow [animation-delay:-15s]">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow [animation-delay:-15s]">
+                            <!-- Planet 4 (Right) - Gemini -->
+                            <div class="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-counter-slow">
                                 <img src="{% static 'icons/gemini.webp' %}" alt="Gemini" class="w-full h-full object-contain p-[2px] -rotate-[45deg]">
                             </div>
+
                         </div>
                     </div>
 
                     <!-- Inner Orbit Group (Tilted Right - Perpendicular) -->
                     <div class="absolute inset-0 flex items-center justify-center rotate-[45deg]">
-                        <!-- Secondary (Inner) Orbit -->
-                        <div class="absolute w-[550px] h-[550px] border border-slate-200/50 dark:border-white/5 rounded-full"></div>
-                        
-                        <!-- Planet 5 (Postgres) -->
-                        <div class="absolute w-[550px] h-[550px] animate-spin-reverse-slow">
+                        <!-- Secondary (Inner) Orbit & Rotating Container -->
+                        <div class="absolute w-[550px] h-[550px] border border-slate-200/50 dark:border-white/5 rounded-full animate-spin-reverse-slow">
+                            
+                            <!-- Planet 5 (Top) - Postgres -->
                             <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg -rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-reverse-counter-slow">
                                 <img src="{% static 'icons/postgresql.png' %}" alt="Postgres" class="w-full h-full object-contain scale-[2.8] rotate-[45deg]">
                             </div>
-                        </div>
 
-                        <!-- Planet 6 (GCP) -->
-                        <div class="absolute w-[550px] h-[550px] animate-spin-reverse-slow [animation-delay:-7.5s]">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg -rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-reverse-counter-slow [animation-delay:-7.5s]">
+                            <!-- Planet 6 (Bottom) - GCP -->
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-white rounded-xl shadow-lg -rotate-[45deg] flex items-center justify-center border border-slate-200 overflow-hidden animate-spin-reverse-counter-slow">
                                 <img src="{% static 'icons/gcp.png' %}" alt="GCP" class="w-full h-full object-contain p-[2px] rotate-[45deg]">
                             </div>
                         </div>
