@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}NIRVAN | Projects — What I've Built{% endblock %}
+{% block title %}NIRVAN | Projects — My Coding Journey{% endblock %}
 {% block content %}
 <style>
     .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
@@ -27,7 +27,7 @@
             The
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-amber-500 to-orange-400"> Workshop</span>
         </h1>
-        <p class="text-xl text-slate-600 dark:text-gray-400 leading-relaxed">Every project is a bet on a belief. Here's what I'm building, why I'm building it, and what it took to ship it.</p>
+        <p class="text-xl text-slate-600 dark:text-gray-400 leading-relaxed">Here's what I'm building, why I'm building it, and what I'm learning along the way.</p>
 
         <!-- Stats bar -->
         <div class="flex flex-wrap justify-center gap-6 mt-10">
@@ -49,14 +49,13 @@
     <!-- FILTER TABS -->
     <div class="flex flex-wrap justify-center gap-3 mb-14 reveal">
         <button onclick="filterProjects('all')" class="proj-filter active-proj px-5 py-2 rounded-full text-sm font-bold border transition-all" data-f="all">All Projects</button>
-        <button onclick="filterProjects('systems')" class="proj-filter px-5 py-2 rounded-full text-sm font-bold border transition-all" data-f="systems">⚙️ Systems</button>
-        <button onclick="filterProjects('finance')" class="proj-filter px-5 py-2 rounded-full text-sm font-bold border transition-all" data-f="finance">📈 Finance</button>
-        <button onclick="filterProjects('ai')" class="proj-filter px-5 py-2 rounded-full text-sm font-bold border transition-all" data-f="ai">🧠 AI</button>
+        <button onclick="filterProjects('python')" class="proj-filter px-5 py-2 rounded-full text-sm font-bold border transition-all" data-f="python">🐍 Python</button>
         <button onclick="filterProjects('web')" class="proj-filter px-5 py-2 rounded-full text-sm font-bold border transition-all" data-f="web">🌐 Web</button>
+        <button onclick="filterProjects('learning')" class="proj-filter px-5 py-2 rounded-full text-sm font-bold border transition-all" data-f="learning">📚 Learning</button>
     </div>
 
     <!-- FEATURED PROJECT -->
-    <div class="mb-12 reveal proj-card" data-f="finance">
+    <div class="mb-12 reveal proj-card" data-f="web">
         <div class="rounded-[2.5rem] overflow-hidden relative" style="background:linear-gradient(135deg,#1e40af 0%,#d97706 100%)">
             <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:24px 24px;"></div>
             <div class="absolute top-0 right-0 w-80 h-80 bg-amber-400/20 rounded-full blur-[100px]"></div>
@@ -64,28 +63,27 @@
                 <div class="max-w-2xl">
                     <div class="flex flex-wrap items-center gap-3 mb-6">
                         <span class="card-tag bg-white/20 text-white">⭐ Flagship</span>
-                        <span class="card-tag bg-white/10 text-white/80">📈 Finance · 🧠 AI</span>
+                        <span class="card-tag bg-white/10 text-white/80">🌐 Web · 🎸 Django</span>
                         <span class="status-active card-tag">● Active</span>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-display font-black mb-4 leading-tight">Arion.ai</h2>
-                    <p class="text-white/75 text-lg leading-relaxed mb-4">A private quantitative portfolio engine that combines EBM forensic audits, celestial cycle analysis, and algorithmic backtesting to identify asymmetric investment opportunities in Indian and global markets.</p>
+                    <h2 class="text-4xl md:text-5xl font-display font-black mb-4 leading-tight">Portfolio Website</h2>
+                    <p class="text-white/75 text-lg leading-relaxed mb-4">My personal digital portfolio website. A clean, modern Django application built using Tailwind CSS and Alpine.js to showcase my coding journey, skills, and projects.</p>
                     <div class="flex flex-wrap gap-2 mb-8">
                         <span class="card-tag bg-white/15 text-white">Python</span>
                         <span class="card-tag bg-white/15 text-white">Django</span>
-                        <span class="card-tag bg-white/15 text-white">PostgreSQL</span>
-                        <span class="card-tag bg-white/15 text-white">GCP</span>
-                        <span class="card-tag bg-white/15 text-white">SLM / RAG</span>
+                        <span class="card-tag bg-white/15 text-white">Tailwind CSS</span>
+                        <span class="card-tag bg-white/15 text-white">Alpine.js</span>
                     </div>
                     <div class="flex flex-wrap gap-4">
-                        <a href="{% url 'core:project_detail' 'arion-ai' %}" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-amber-700 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">
+                        <a href="{% url 'core:project_detail' 'portfolio-website' %}" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-amber-700 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">
                             <i data-lucide="external-link" class="w-4 h-4"></i> View Project
                         </a>
-                        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white/20 text-white font-bold rounded-full hover:scale-105 transition-transform border border-white/30">
+                        <a href="https://github.com/mrveer-101/Portfolio" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white/20 text-white font-bold rounded-full hover:scale-105 transition-transform border border-white/30">
                             <i data-lucide="github" class="w-4 h-4"></i> GitHub
                         </a>
                     </div>
                 </div>
-                <div class="animate-float flex-shrink-0 hidden md:flex w-40 h-40 bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 items-center justify-center text-7xl">📊</div>
+                <div class="animate-float flex-shrink-0 hidden md:flex w-40 h-40 bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 items-center justify-center text-7xl">🌐</div>
             </div>
         </div>
     </div>
@@ -93,8 +91,8 @@
     <!-- PROJECT GRID -->
     <div id="proj-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
 
-        <!-- Emerald Sentinel -->
-        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="systems">
+        <!-- Task Manager -->
+        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="python">
             <div class="h-44 bg-gradient-to-br from-teal-500 to-emerald-600 relative overflow-hidden flex items-center justify-center text-7xl">
                 🛡️
                 <div class="absolute inset-0 bg-black/10"></div>
@@ -102,24 +100,24 @@
             <div class="p-7">
                 <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
                     <div class="flex gap-2">
-                        <span class="card-tag bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-400">⚙️ Systems</span>
+                        <span class="card-tag bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-400">🐍 Python</span>
                     </div>
                     <span class="status-progress card-tag">In Progress</span>
                 </div>
-                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Emerald Sentinel</h3>
-                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A high-fidelity system performance monitor built in Rust. Real-time telemetry — CPU, memory, disk, network — with zero overhead. The antithesis of bloated monitoring tools.</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Task Manager Web App</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A simple task management application built in Python and Django, helping users track their daily tasks and productivity.</p>
                 <div class="flex flex-wrap gap-1.5 mb-5">
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Rust</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Python</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Django</span>
                     <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">SQLite</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">CLI</span>
                 </div>
-                <a href="{% url 'core:project_detail' 'emerald-sentinel' %}" class="inline-flex items-center gap-1 text-teal-600 text-sm font-bold hover:gap-2 transition-all">
+                <a href="{% url 'core:project_detail' 'task-manager' %}" class="inline-flex items-center gap-1 text-teal-600 text-sm font-bold hover:gap-2 transition-all">
                     View Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
 
-        <!-- NIRVAN Portfolio -->
+        <!-- Portfolio Website -->
         <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="web">
             <div class="h-44 bg-gradient-to-br from-accent-blue to-violet-600 relative overflow-hidden flex items-center justify-center text-7xl">
                 🌐
@@ -130,93 +128,92 @@
                     <span class="card-tag bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400">🌐 Web</span>
                     <span class="status-active card-tag">● Active</span>
                 </div>
-                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">NIRVAN Portfolio</h3>
-                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">This very portfolio. A production-grade Django application with HTMX, Alpine.js, Tailwind CSS, Docker, and GCP Cloud Run deployment. The ORION executive aesthetic.</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Portfolio Website</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">My personal digital portfolio website. A clean, modern Django application built using Tailwind CSS and Alpine.js to showcase my coding journey, skills, and projects.</p>
                 <div class="flex flex-wrap gap-1.5 mb-5">
                     <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Django</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">HTMX</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Docker</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">GCP</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Tailwind CSS</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Alpine.js</span>
                 </div>
-                <a href="{% url 'core:project_detail' 'nirvan-portfolio' %}" class="inline-flex items-center gap-1 text-accent-blue text-sm font-bold hover:gap-2 transition-all">
+                <a href="{% url 'core:project_detail' 'portfolio-website' %}" class="inline-flex items-center gap-1 text-accent-blue text-sm font-bold hover:gap-2 transition-all">
                     View Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
 
-        <!-- PRO.LMS -->
-        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="web">
+        <!-- Coding Study Hub -->
+        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="learning">
             <div class="h-44 bg-gradient-to-br from-orange-400 to-rose-500 relative overflow-hidden flex items-center justify-center text-7xl">
                 🎓
                 <div class="absolute inset-0 bg-black/10"></div>
             </div>
             <div class="p-7">
                 <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                    <span class="card-tag bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-400">🌐 Web</span>
+                    <span class="card-tag bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-400">📚 Learning</span>
                     <span class="status-shipped card-tag">Shipped</span>
                 </div>
-                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">PRO.LMS</h3>
-                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A full-featured Learning Management System with course management, progress tracking, assessments, and role-based access control. Built for real academic institutions.</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Coding Study Hub</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A resource platform built to organize my coding notes, tutorials, and study materials for learning programming languages.</p>
                 <div class="flex flex-wrap gap-1.5 mb-5">
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Django</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">PostgreSQL</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Bootstrap</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">HTML/CSS</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Markdown</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Study</span>
                 </div>
-                <a href="{% url 'core:project_detail' 'pro-lms' %}" class="inline-flex items-center gap-1 text-orange-500 text-sm font-bold hover:gap-2 transition-all">
+                <a href="{% url 'core:project_detail' 'coding-study-hub' %}" class="inline-flex items-center gap-1 text-orange-500 text-sm font-bold hover:gap-2 transition-all">
                     Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Local AI Engine -->
-        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="ai">
+        <!-- Math Practice Game -->
+        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="python">
             <div class="h-44 bg-gradient-to-br from-violet-600 to-indigo-700 relative overflow-hidden flex items-center justify-center text-7xl">
                 🧠
                 <div class="absolute inset-0 bg-black/10"></div>
             </div>
             <div class="p-7">
                 <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                    <span class="card-tag bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-400">🧠 AI</span>
+                    <span class="card-tag bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-400">🐍 Python</span>
                     <span class="status-active card-tag">● Active</span>
                 </div>
-                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Local AI Research Engine</h3>
-                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">An on-device RAG pipeline using ChromaDB and Ollama for private document intelligence. Zero cloud dependency. Full data sovereignty — answers from your own documents.</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Math Practice Game</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">An interactive CLI game built in Python to help students practice math problems. Generates random equations, tracks scores, and saves high scores to a local file.</p>
                 <div class="flex flex-wrap gap-1.5 mb-5">
                     <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Python</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">ChromaDB</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Ollama</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">CLI</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Game</span>
                 </div>
-                <a href="{% url 'core:project_detail' 'local-ai-engine' %}" class="inline-flex items-center gap-1 text-violet-600 text-sm font-bold hover:gap-2 transition-all">
+                <a href="{% url 'core:project_detail' 'math-practice-game' %}" class="inline-flex items-center gap-1 text-violet-600 text-sm font-bold hover:gap-2 transition-all">
                     View Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Phoenix Oracle -->
-        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="finance">
+        <!-- Simple Blog Engine -->
+        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="learning">
             <div class="h-44 bg-gradient-to-br from-blue-600 to-cyan-500 relative overflow-hidden flex items-center justify-center text-7xl">
                 🔮
                 <div class="absolute inset-0 bg-black/10"></div>
             </div>
             <div class="p-7">
                 <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
-                    <span class="card-tag bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-400">📈 Finance</span>
+                    <span class="card-tag bg-cyan-100 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-400">📚 Learning</span>
                     <span class="status-progress card-tag">In Progress</span>
                 </div>
-                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Phoenix Oracle</h3>
-                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A predictive analytics platform for Silver and commodity markets, using 100-year historical data and EBM forensic audits to time strategic capital deployment windows.</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Simple Blog Engine</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A simple blog platform built with Django. Allows users to write, edit, and read blog posts with standard markdown rendering.</p>
                 <div class="flex flex-wrap gap-1.5 mb-5">
                     <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Python</span>
                     <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Django</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Pandas</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Markdown</span>
                 </div>
-                <a href="{% url 'core:project_detail' 'phoenix-oracle' %}" class="inline-flex items-center gap-1 text-cyan-600 text-sm font-bold hover:gap-2 transition-all">
+                <a href="{% url 'core:project_detail' 'blog-engine' %}" class="inline-flex items-center gap-1 text-cyan-600 text-sm font-bold hover:gap-2 transition-all">
                     View Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Artemis Weather -->
+        <!-- Artemis Weather App -->
         <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="web">
             <div class="h-44 bg-gradient-to-br from-sky-400 to-blue-600 relative overflow-hidden flex items-center justify-center text-7xl">
                 🌤️
@@ -227,12 +224,12 @@
                     <span class="card-tag bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-400">🌐 Web</span>
                     <span class="status-shipped card-tag">Shipped</span>
                 </div>
-                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Artemis Weather OS</h3>
-                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A premium zero-scroll weather dashboard with real-time data, hourly gradient charts, UV and air quality indicators, and a dynamic weather-themed UI that adapts to conditions.</p>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Artemis Weather App</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">A beautiful web weather app with real-time data, hourly gradient charts, and a dynamic weather-themed UI that adapts to current conditions using the OpenWeather API.</p>
                 <div class="flex flex-wrap gap-1.5 mb-5">
                     <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">HTML/CSS</span>
                     <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">JavaScript</span>
-                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Weather API</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">API</span>
                 </div>
                 <a href="{% url 'core:project_detail' 'artemis-weather' %}" class="inline-flex items-center gap-1 text-sky-600 text-sm font-bold hover:gap-2 transition-all">
                     View Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -254,12 +251,12 @@
         <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:28px 28px;"></div>
         <div class="relative z-10">
             <h2 class="text-4xl md:text-5xl font-display font-black mb-4">Have a project in mind?</h2>
-            <p class="text-amber-100 text-lg max-w-xl mx-auto mb-8">Let's build something that matters — performant, private, and financially intelligent.</p>
+            <p class="text-amber-100 text-lg max-w-xl mx-auto mb-8">Let's build something that matters — simple, clean, and functional.</p>
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="{% url 'core:contact' %}" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-amber-700 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">
                     <i data-lucide="send" class="w-5 h-5"></i> Let's Talk
                 </a>
-                <a href="https://github.com/ArionGD" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white/20 text-white font-bold rounded-full hover:scale-105 transition-transform border border-white/30">
+                <a href="https://github.com/mrveer-101" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white/20 text-white font-bold rounded-full hover:scale-105 transition-transform border border-white/30">
                     <i data-lucide="github" class="w-5 h-5"></i> GitHub
                 </a>
             </div>
