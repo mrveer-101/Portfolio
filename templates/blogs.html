@@ -51,37 +51,36 @@
     <!-- ─── CATEGORY FILTERS ─── -->
     <div class="flex flex-wrap justify-center gap-3 mb-14 reveal">
         <button onclick="filterCategory('all')" class="filter-btn active-filter px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="all">All Posts</button>
-        <button onclick="filterCategory('systems')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="systems">⚙️ Systems</button>
-        <button onclick="filterCategory('finance')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="finance">📈 Finance</button>
-        <button onclick="filterCategory('ai')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="ai">🧠 AI & ML</button>
+        <button onclick="filterCategory('python')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="python">🐍 Python</button>
         <button onclick="filterCategory('web')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="web">🌐 Web Dev</button>
-        <button onclick="filterCategory('philosophy')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="philosophy">💡 Philosophy</button>
+        <button onclick="filterCategory('learning')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="learning">📚 Learning Notes</button>
+        <button onclick="filterCategory('projects')" class="filter-btn px-5 py-2 rounded-full text-sm font-bold border transition-all" data-cat="projects">✍️ Projects</button>
     </div>
 
     <!-- ─── FEATURED POST ─── -->
     <div class="mb-14 reveal">
-        <div class="featured-card rounded-[2.5rem] p-10 md:p-14 text-white relative overflow-hidden blog-post" data-cat="systems" data-title="why rust is the endgame">
+        <div class="featured-card rounded-[2.5rem] p-10 md:p-14 text-white relative overflow-hidden blog-post" style="background:linear-gradient(135deg,#059669 0%,#0d9488 100%)" data-cat="projects" data-title="building anulekh note taking web app python django">
             <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px,white 1px,transparent 0);background-size:28px 28px;"></div>
-            <div class="absolute top-0 right-0 w-80 h-80 bg-violet-400/20 rounded-full blur-[100px]"></div>
+            <div class="absolute top-0 right-0 w-80 h-80 bg-teal-400/20 rounded-full blur-[100px]"></div>
             <div class="relative z-10 flex flex-col md:flex-row justify-between gap-8 items-start">
                 <div class="max-w-2xl">
                     <div class="flex items-center gap-3 mb-6">
-                        <span class="tag-pill bg-white/20 text-white">⭐ Featured</span>
-                        <span class="tag-pill bg-white/10 text-white/80">⚙️ Systems</span>
-                        <span class="text-white/50 text-xs">May 10, 2026 · 12 min read</span>
+                        <span class="tag-pill bg-white/20 text-white font-bold">⭐ Featured</span>
+                        <span class="tag-pill bg-white/10 text-white/90 font-bold">✍️ Projects · 🐍 Python</span>
+                        <span class="text-white/80 text-xs">May 10, 2026 · 6 min read</span>
                     </div>
                     <h2 class="text-4xl md:text-5xl font-display font-black mb-4 leading-tight">
-                        Why Rust is the Endgame for Systems Programming
+                        Building Anulekh: Why I Chose Python &amp; Django for My Note-Taking Web App
                     </h2>
-                    <p class="text-white/70 text-lg leading-relaxed mb-8">
-                        Memory safety without a garbage collector is not a compromise — it's an architectural revolution. A deep dive into Rust's ownership model and why I believe it will outlast every contemporary language.
+                    <p class="text-white/85 text-lg leading-relaxed mb-8">
+                        A developer note on designing Anulekh from scratch using Django, Tailwind CSS, and Alpine.js to create a clean, responsive interface for organizing study notes and code snippets.
                     </p>
-                    <a href="{% url 'core:blog_detail' 'rust-endgame' %}" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-violet-700 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">
+                    <a href="{% url 'core:blogs' %}" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-emerald-800 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">
                         Read Article <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
                 <div class="animate-float flex-shrink-0 hidden md:flex w-36 h-36 bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 items-center justify-center text-7xl">
-                    🦀
+                    ✍️
                 </div>
             </div>
         </div>
