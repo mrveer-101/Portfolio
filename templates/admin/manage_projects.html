@@ -29,42 +29,34 @@
                 <!-- Row 1 -->
                 <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
                     <td class="p-4">
-                        <p class="font-bold text-slate-900 dark:text-white mb-1">Arion.ai Forensics</p>
-                        <p class="text-xs text-slate-500">slug: arion-ai</p>
+                        <p class="font-bold text-slate-900 dark:text-white mb-1">Anulekh Project</p>
+                        <p class="text-xs text-slate-500">slug: anulekh-project</p>
                     </td>
-                    <td class="p-4 text-sm font-semibold">📈 Finance</td>
+                    <td class="p-4 text-sm font-semibold">✍️ Python / Web App</td>
                     <td class="p-4">
                         <span class="px-2.5 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-md">● Active</span>
                     </td>
                     <td class="p-4 text-right">
                         <div class="flex items-center justify-end gap-2">
-                            <a href="{% url 'core:project_preview' 'arion-ai' %}" title="Preview" class="p-2 text-slate-400 hover:text-emerald-500 bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="eye" class="w-4 h-4"></i></a>
-                            <a href="{% url 'core:project_edit' 'arion-ai' %}" title="Edit" class="p-2 text-slate-400 hover:text-accent-blue bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="edit" class="w-4 h-4"></i></a>
-                            <form action="{% url 'core:project_delete' 'arion-ai' %}" method="POST" class="inline">
-                                {% csrf_token %}
-                                <button type="submit" title="Delete" class="p-2 text-slate-400 hover:text-rose-500 bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                            </form>
+                            <a href="{% url 'core:projects' %}" title="Preview" class="p-2 text-slate-400 hover:text-emerald-500 bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="eye" class="w-4 h-4"></i></a>
+                            <a href="{% url 'core:projects' %}" title="Edit" class="p-2 text-slate-400 hover:text-accent-blue bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="edit" class="w-4 h-4"></i></a>
                         </div>
                     </td>
                 </tr>
                 <!-- Row 2 -->
                 <tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
                     <td class="p-4">
-                        <p class="font-bold text-slate-900 dark:text-white mb-1">Emerald Sentinel</p>
-                        <p class="text-xs text-slate-500">slug: emerald-sentinel</p>
+                        <p class="font-bold text-slate-900 dark:text-white mb-1">Portfolio</p>
+                        <p class="text-xs text-slate-500">slug: portfolio</p>
                     </td>
-                    <td class="p-4 text-sm font-semibold">⚙️ Systems</td>
+                    <td class="p-4 text-sm font-semibold">🌐 Web Development</td>
                     <td class="p-4">
-                        <span class="px-2.5 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-bold rounded-md">In Progress</span>
+                        <span class="px-2.5 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-bold rounded-md">Shipped</span>
                     </td>
                     <td class="p-4 text-right">
                         <div class="flex items-center justify-end gap-2">
-                            <a href="{% url 'core:project_preview' 'emerald-sentinel' %}" title="Preview" class="p-2 text-slate-400 hover:text-emerald-500 bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="eye" class="w-4 h-4"></i></a>
-                            <a href="{% url 'core:project_edit' 'emerald-sentinel' %}" title="Edit" class="p-2 text-slate-400 hover:text-accent-blue bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="edit" class="w-4 h-4"></i></a>
-                            <form action="{% url 'core:project_delete' 'emerald-sentinel' %}" method="POST" class="inline">
-                                {% csrf_token %}
-                                <button type="submit" title="Delete" class="p-2 text-slate-400 hover:text-rose-500 bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                            </form>
+                            <a href="{% url 'core:projects' %}" title="Preview" class="p-2 text-slate-400 hover:text-emerald-500 bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="eye" class="w-4 h-4"></i></a>
+                            <a href="{% url 'core:projects' %}" title="Edit" class="p-2 text-slate-400 hover:text-accent-blue bg-white dark:bg-obsidian border border-slate-200 dark:border-white/10 rounded-lg shadow-sm transition-colors"><i data-lucide="edit" class="w-4 h-4"></i></a>
                         </div>
                     </td>
                 </tr>
