@@ -91,8 +91,35 @@
     <!-- PROJECT GRID -->
     <div id="proj-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
 
-        <!-- Task Manager -->
-        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border border-slate-100 dark:border-white/10 shadow-sm overflow-hidden" data-f="python">
+        <!-- Anulekh Project (Highlighted Active) -->
+        <div class="proj-card reveal card-hover bg-white dark:bg-white/5 rounded-3xl border-2 border-emerald-500 shadow-lg shadow-emerald-500/10 overflow-hidden" data-f="python">
+            <div class="h-44 bg-gradient-to-br from-emerald-500 to-teal-600 relative overflow-hidden flex items-center justify-center text-7xl text-white">
+                ✍️
+                <div class="absolute inset-0 bg-black/10"></div>
+                <span class="absolute top-3 right-3 px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white font-black text-xs rounded-full border border-white/20 flex items-center gap-1 shadow-md">
+                    <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> CURRENT WORKING
+                </span>
+            </div>
+            <div class="p-7">
+                <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                    <div class="flex gap-2">
+                        <span class="card-tag bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 font-bold">🐍 Python</span>
+                        <span class="card-tag bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-400 font-bold">🎸 Django</span>
+                    </div>
+                    <span class="status-active card-tag">● Active</span>
+                </div>
+                <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-2">Anulekh Project</h3>
+                <p class="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-5">An intelligent note-taking and document creation web application. Currently under active development.</p>
+                <div class="flex flex-wrap gap-1.5 mb-5">
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Python</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Django</span>
+                    <span class="card-tag bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300">Web App</span>
+                </div>
+                <a href="{% url 'core:project_detail' 'task-manager' %}" class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 text-sm font-bold hover:gap-2 transition-all">
+                    View Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
             <div class="h-44 bg-gradient-to-br from-teal-500 to-emerald-600 relative overflow-hidden flex items-center justify-center text-7xl">
                 🛡️
                 <div class="absolute inset-0 bg-black/10"></div>
